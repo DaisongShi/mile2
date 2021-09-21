@@ -97,7 +97,8 @@ class SignUpViewController: UIViewController {
                         }
                     }
                     // Transition to the home screen
-                    self.transitionToHome()
+                    // self.transitionToHome()
+                    self.performSegue(withIdentifier: "ShowLogInPage", sender: self)
                 }
             }
         }
