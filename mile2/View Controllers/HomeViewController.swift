@@ -35,7 +35,7 @@ class HomeViewController: UIViewController {
         } catch let logoutError {
             print(logoutError)
         }
-        let storyboard = UIStoryboard(name: "Start", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let loginVC = storyboard.instantiateViewController(withIdentifier: "index")
         self.present(loginVC, animated: true, completion: nil)
     }
