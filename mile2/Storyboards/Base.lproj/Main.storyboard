@@ -114,7 +114,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUI-7h-EDE">
                                         <rect key="frame" x="0.0" y="336.33333333333331" width="310" height="117.33333333333331"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="NeL-U6-Xb7"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="NeL-U6-Xb7"/>
                                         </constraints>
                                         <state key="normal" title="Sign Up"/>
                                         <connections>
@@ -132,6 +132,17 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img2" translatesAutoresizingMaskIntoConstraints="NO" id="8xW-hB-V7k">
                                 <rect key="frame" x="134" y="662.33333333333337" width="236" height="107.66666666666663"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71U-Sc-xTc">
+                                <rect key="frame" x="16" y="20" width="73" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" systemColor="systemBlueColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="wuf-vy-4Y2" kind="show" id="AIw-Dh-XqN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ddn-ZS-63D"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -157,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AF8-s1-EhF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2" y="-909"/>
+            <point key="canvasLocation" x="-3.0769230769230766" y="-909.24170616113736"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Kn0-ep-0k4">
@@ -247,7 +258,7 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="SDi-lm-yKS" customClass="HomeViewController" customModule="mile2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HAL-7y-Tk9">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vlh-k3-yxV">
@@ -272,7 +283,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <state key="normal" title="Out">
-                                                    <color key="titleColor" red="0.9828525185585022" green="0.64432018995285034" blue="0.012320798821747303" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" systemColor="systemBlueColor"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="logoutTapped:" destination="SDi-lm-yKS" eventType="touchUpInside" id="TeS-7g-SEq"/>
@@ -489,7 +500,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FxX-AJ-bQS" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2261.5384615384614" y="-58.293838862559241"/>
+            <point key="canvasLocation" x="2306" y="-58"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="BYe-J2-fYA">
@@ -1213,7 +1224,7 @@ DogTime recommends this carrier for traveling with your small Dachshund. You sho
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYc-7v-zaa">
                                 <rect key="frame" x="63" y="737" width="264" height="36"/>
-                                <color key="backgroundColor" red="0.9828525185585022" green="0.64432018995285034" blue="0.012320798821747303" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vYc-7v-zaa" secondAttribute="height" multiplier="265:36" id="cHx-ZZ-FYV"/>
                                 </constraints>
@@ -1239,6 +1250,15 @@ DogTime recommends this carrier for traveling with your small Dachshund. You sho
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ht7-oy-dGl">
+                                <rect key="frame" x="0.0" y="44" width="100" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="zuB-cs-Uqz" kind="show" id="Ds9-rU-ys0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rdB-Cx-ril"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1258,7 +1278,7 @@ DogTime recommends this carrier for traveling with your small Dachshund. You sho
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zlN-yw-N5z" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2262" y="-869"/>
+            <point key="canvasLocation" x="2261.5384615384614" y="-869.43127962085305"/>
         </scene>
         <!--Real Object Scanning Controller-->
         <scene sceneID="Rcc-nM-dta">
@@ -1270,7 +1290,7 @@ DogTime recommends this carrier for traveling with your small Dachshund. You sho
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPk-4M-cxs">
                                 <rect key="frame" x="0.0" y="44" width="390" height="32.333333333333343"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1304,8 +1324,8 @@ DogTime recommends this carrier for traveling with your small Dachshund. You sho
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Dgv-w7-XlE"/>
-        <segue reference="zme-0d-iFc"/>
+        <segue reference="yiQ-19-Qei"/>
+        <segue reference="CEW-62-vv4"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
@@ -1342,6 +1362,9 @@ DogTime recommends this carrier for traveling with your small Dachshund. You sho
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
