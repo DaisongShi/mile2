@@ -27,7 +27,7 @@ class UserProfileVC: UIViewController {
             //  self.present(Service.createAlertController(title: "Error", message: signOutError.localizedDescription), animated: true, completion: nil)
               print(signOutError)
           }
-          let storyboard = UIStoryboard(name: "Start", bundle: nil)
+          let storyboard = UIStoryboard(name: "Main", bundle: nil)
           let loginVC = storyboard.instantiateViewController(withIdentifier: "index")
           self.present(loginVC, animated: true, completion: nil)
     }
