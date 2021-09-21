@@ -19,17 +19,14 @@ class UserProfileVC: UIViewController {
     }
     
     @IBAction func logoutTapped(_ sender: Any) {
-        let auth = Auth.auth()
-          do {
-              try auth.signOut()
-              self.dismiss(animated: true, completion: nil)
-          } catch let signOutError {
-            //  self.present(Service.createAlertController(title: "Error", message: signOutError.localizedDescription), animated: true, completion: nil)
-              print(signOutError)
-          }
-          let storyboard = UIStoryboard(name: "Main", bundle: nil)
-          let loginVC = storyboard.instantiateViewController(withIdentifier: "index")
-          self.present(loginVC, animated: true, completion: nil)
+        do {
+            try Firebase.Auth.auth().signOut()
+        } catch let logoutError {
+            print(logoutError)
+        }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = storyboard.instantiateViewController(withIdentifier: "index")
+        self.present(loginVC, animated: true, completion: nil)
     }
     
     
