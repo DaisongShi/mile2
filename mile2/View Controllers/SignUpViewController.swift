@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import FirebaseFirestore
 
 class SignUpViewController: UIViewController {
     
@@ -67,19 +68,18 @@ class SignUpViewController: UIViewController {
 
     
     @IBAction func signUpTapped (_sender: Any){
-        
         // validate the fields
         let error = validateFields()
-        
         if error != nil{
             // there's something wrong with the fields, show error message
             showError(error!)
-        } else {
+        }
+        else
+        {
             // create cleaned versions of the data
             let username = usernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            
             // create users
             Auth.auth().createUser(withEmail: email, password: password) {(result, err) in
                 // check errors
@@ -96,13 +96,30 @@ class SignUpViewController: UIViewController {
                             self.showError("Error saving user data")
                         }
                     }
+                    db.collection("users").document("info").setData(["email": email, "password": password, "username": username])
+                    { err in
+                        if let err = err {
+                            print("Error writing document: \(err)")
+                        } else {
+                            print("Document successfully written!")
+                        }
+                    }
                     // Transition to the home screen
                     // self.transitionToHome()
                     self.performSegue(withIdentifier: "ShowLogInPage", sender: self)
+                    // add user input to firestore
+                    // self.addUser(email: email, password: password, username: username)
+
                 }
             }
         }
     }
+  /*
+    func addUser(email: String, password: String, username: String){
+        let db = Firestore.firestore()
+        db.collection("users").document().setData(["email": email, "password": password, "username": username])
+    }
+    */
     
     func showError(_ message: String) {
         errorLabel.text = message
