@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wuf-vy-4Y2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wuf-vy-4Y2">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -164,6 +165,7 @@
                         <outlet property="passwordTextField" destination="rAD-NY-IbQ" id="9lH-ae-brO"/>
                         <outlet property="signUpBtn" destination="jUI-7h-EDE" id="Ktq-oZ-oLo"/>
                         <outlet property="usernameTextField" destination="C51-vp-bwP" id="eIx-kf-l72"/>
+                        <segue destination="2xJ-DA-yyX" kind="show" identifier="ShowLogInPage" id="3hH-BJ-b23"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AF8-s1-EhF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -294,7 +296,7 @@
                                 </items>
                             </navigationBar>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="IBr-0Z-x1M">
-                                <rect key="frame" x="115.66666666666669" y="316" width="103.33333333333331" height="28"/>
+                                <rect key="frame" x="115.66666666666667" y="316" width="137.66666666666663" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="aMo-Qb-e85"/>
                                 </constraints>
@@ -623,7 +625,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="124" id="kgv-Mi-Hbn" customClass="TableViewCell" customModule="mile2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="124"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kgv-Mi-Hbn" id="Pba-r3-rQK">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="124"/>
@@ -1334,7 +1336,8 @@ DogTime recommends this carrier for traveling with your small Dachshund. You sho
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Pdk-6A-HCS"/>
+        <segue reference="tjy-iv-DwK"/>
+        <segue reference="3hH-BJ-b23"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
