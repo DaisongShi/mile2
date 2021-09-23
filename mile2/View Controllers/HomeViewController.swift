@@ -29,15 +29,8 @@ class HomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-    @IBAction func logoutTapped(_ sender: Any) {
-        do {
-            try Firebase.Auth.auth().signOut()
-        } catch let logoutError {
-            print(logoutError)
-        }
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let loginVC = storyboard.instantiateViewController(withIdentifier: "index")
-        self.present(loginVC, animated: true, completion: nil)
+    @IBAction func postTapped(_ sender: Any) {
+
     }
     
 }
