@@ -33,6 +33,9 @@
 		9B546AEB26F80520000F9280 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B546AEA26F80520000F9280 /* GoogleService-Info.plist */; };
 		9B546AF126F806FF000F9280 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B546AF026F806FF000F9280 /* UserProfileVC.swift */; };
 		9B546AF326F80951000F9280 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B546AF226F80951000F9280 /* Start.storyboard */; };
+		9B641A4126FD3DDE0053A8D4 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B641A4026FD3DDE0053A8D4 /* StorageManager.swift */; };
+		9B641A4526FD6AA00053A8D4 /* HomePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B641A4426FD6AA00053A8D4 /* HomePageTableViewCell.swift */; };
+		9B641A4727010F7D0053A8D4 /* ProfileCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B641A4627010F7D0053A8D4 /* ProfileCollectionViewController.swift */; };
 		9B6E6096262A6D6000342D3E /* PetBreeds 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E6095262A6D6000342D3E /* PetBreeds 1.mlmodel */; };
 		9B6E609F262A915F00342D3E /* ScanPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E609E262A915F00342D3E /* ScanPhotoController.swift */; };
 		9B6E60A4262A96E000342D3E /* RealObjectScanningController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E60A3262A96E000342D3E /* RealObjectScanningController.swift */; };
@@ -91,6 +94,9 @@
 		9B546AEA26F80520000F9280 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B546AF026F806FF000F9280 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
 		9B546AF226F80951000F9280 /* Start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
+		9B641A4026FD3DDE0053A8D4 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		9B641A4426FD6AA00053A8D4 /* HomePageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTableViewCell.swift; sourceTree = "<group>"; };
+		9B641A4627010F7D0053A8D4 /* ProfileCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewController.swift; sourceTree = "<group>"; };
 		9B6E6095262A6D6000342D3E /* PetBreeds 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "PetBreeds 1.mlmodel"; sourceTree = "<group>"; };
 		9B6E609E262A915F00342D3E /* ScanPhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanPhotoController.swift; sourceTree = "<group>"; };
 		9B6E60A3262A96E000342D3E /* RealObjectScanningController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealObjectScanningController.swift; sourceTree = "<group>"; };
@@ -198,6 +204,9 @@
 				9B2083D3262FF1A6009BD355 /* LikeVC.swift */,
 				9B2083CE262FE969009BD355 /* TableViewCell.swift */,
 				9B546AF026F806FF000F9280 /* UserProfileVC.swift */,
+				9B641A4026FD3DDE0053A8D4 /* StorageManager.swift */,
+				9B641A4426FD6AA00053A8D4 /* HomePageTableViewCell.swift */,
+				9B641A4627010F7D0053A8D4 /* ProfileCollectionViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -503,10 +512,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B641A4126FD3DDE0053A8D4 /* StorageManager.swift in Sources */,
+				9B641A4526FD6AA00053A8D4 /* HomePageTableViewCell.swift in Sources */,
 				9B2083CF262FE969009BD355 /* TableViewCell.swift in Sources */,
 				36F065FF261A730300719EC0 /* SignUpViewController.swift in Sources */,
 				9B6E6096262A6D6000342D3E /* PetBreeds 1.mlmodel in Sources */,
 				36F065C6261A6A4700719EC0 /* ViewController.swift in Sources */,
+				9B641A4727010F7D0053A8D4 /* ProfileCollectionViewController.swift in Sources */,
 				36F06608261A7BBA00719EC0 /* Utilities.swift in Sources */,
 				9B546AE926F80414000F9280 /* Constants.swift in Sources */,
 				36F065C2261A6A4700719EC0 /* AppDelegate.swift in Sources */,
