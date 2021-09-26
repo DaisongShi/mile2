@@ -8,26 +8,74 @@
 import UIKit
 import Firebase
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
-    @IBOutlet weak var pageView: UIPageControl!
-    @IBOutlet weak var sliderCollectionView: UICollectionView!
-   
+
+    @IBOutlet weak var SliderCollectionView: UICollectionView!
+    
+    @IBOutlet weak var PageView: UIPageControl!
+    
     var imgArr = [UIImage(named: "dog1"),
-                  UIImage(named: "dog2")]
+                  UIImage(named: "dog2"),
+                  UIImage(named: "dog3")]
+    
+    
+    @IBOutlet weak var homeTableView: UITableView!
+    
+    let fileImg = [UIImage(named: "doge"),
+                   UIImage(named: "img1"),
+                   UIImage(named: "img2"),
+                   UIImage(named: "img3")]
+    
+    let nameLbl = [("Eric"), ("VV"), ("Joseph"), ("Boss")]
+    
+    let postImg = [UIImage(named: "dog1"),
+                   UIImage(named: "dog2"),
+                   UIImage(named: "dog3"),
+                   UIImage(named: "dog4")]
+    
+    let postTxt = [("description1"), ("description2"), ("description3"), ("description4")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.bringSubviewToFront(pageView)
+        view.bringSubviewToFront(PageView)
         
-        pageView.currentPage = 0
+        PageView.currentPage = 0
         
+        homeTableView.delegate = self
+        homeTableView.dataSource = self
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return nameLbl.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 235;
+    }
+    
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath)
+        as! HomePageTableViewCell
+        cell.postImg.image = self.postImg[indexPath.row]
+        cell.postTxt.text = self.postTxt[indexPath.row]
+        cell.nameLbl.text = self.nameLbl[indexPath.row]
+        cell.fileImg.image = self.fileImg[indexPath.row]
+        
+        return cell
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    
 
     @IBAction func postTapped(_ sender: Any) {
 
@@ -54,7 +102,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         }
         
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            let size = sliderCollectionView.frame.size
+            let size = SliderCollectionView.frame.size
             return CGSize(width: size.width, height: size.height)
         }
         
