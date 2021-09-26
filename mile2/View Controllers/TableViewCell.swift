@@ -17,11 +17,11 @@ class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var userImg: UIImageView!
     
-    
     @IBOutlet weak var likeBtn: UIButton!
     
-    @IBAction func likeBtn(_ sender: Any) {
-    }
+    
+    
+
     
     
     override func awakeFromNib() {
