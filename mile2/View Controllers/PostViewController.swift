@@ -12,7 +12,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var label: UILabel!
-    @IBOutlet weak var titleTxt: UITextField!
+  //  @IBOutlet weak var titleTxt: UITextField!
     @IBOutlet weak var textView: UITextView!
     
     private let storage = Storage.storage().reference()
