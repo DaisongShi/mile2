@@ -31,15 +31,12 @@ class SignUpViewController: UIViewController {
     }
     
     func setUpElements(){
-        
         errorLabel.alpha = 0
-        
         Utilities.styleTextField(usernameTextField)
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
         Utilities.styleTextField(confirmTextField)
         Utilities.styleFilledButton(signUpBtn)
-        
     }
 
     
@@ -51,7 +48,6 @@ class SignUpViewController: UIViewController {
             emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             confirmTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            
             return "Please fill in all fields"
         }
         
@@ -85,7 +81,7 @@ class SignUpViewController: UIViewController {
                 // check errors
                 if  err != nil {
                     // there was an error creating the user
-                    self.showError("Error creating user")
+                    self.showError("check email format or password")
                 } else {
                     // User was created successfully
                     let db = Firestore.firestore()
