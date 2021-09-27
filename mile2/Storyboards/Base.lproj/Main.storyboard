@@ -518,10 +518,10 @@
             </objects>
             <point key="canvasLocation" x="1013.8461538461538" y="755.68720379146919"/>
         </scene>
-        <!--Profile Collection View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="BYe-J2-fYA">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="bzE-3H-IbD" customClass="ProfileCollectionViewController" customModule="mile2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="bzE-3H-IbD" customClass="ProfileViewController" customModule="mile2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h0m-ir-g6R">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -562,10 +562,13 @@
                                 <rect key="frame" x="280" y="259" width="70" height="27"/>
                                 <state key="normal" image="fBtn"/>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8QC-S7-l1v">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8QC-S7-l1v">
                                 <rect key="frame" x="0.0" y="315" width="390" height="475"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="475" id="AHa-Gn-E96"/>
+                                    <constraint firstAttribute="width" secondItem="8QC-S7-l1v" secondAttribute="height" multiplier="78:95" id="Sdp-l1-Esd"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Vwb-ad-mVx">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -573,7 +576,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="fEb-Fz-GBn">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProfileCollectionViewCell" id="fEb-Fz-GBn" customClass="ProfileCollectionViewCell" customModule="mile2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CpZ-SI-aOH">
@@ -582,6 +585,10 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="bzE-3H-IbD" id="hij-xQ-0bY"/>
+                                    <outlet property="delegate" destination="bzE-3H-IbD" id="LUv-J2-Od5"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="t4g-eP-Emj"/>
@@ -589,13 +596,16 @@
                         <constraints>
                             <constraint firstItem="4ms-fK-Jva" firstAttribute="top" secondItem="xQG-CR-SOV" secondAttribute="bottom" constant="26" id="1yy-NN-l22"/>
                             <constraint firstItem="zcw-Gj-O3w" firstAttribute="trailing" secondItem="t4g-eP-Emj" secondAttribute="trailing" id="4IA-AR-PqV"/>
+                            <constraint firstItem="8QC-S7-l1v" firstAttribute="leading" secondItem="t4g-eP-Emj" secondAttribute="leading" id="8Rt-HK-lQ3"/>
                             <constraint firstItem="U0Y-XN-CVs" firstAttribute="top" secondItem="6XF-60-Cjm" secondAttribute="bottom" constant="19" id="8zp-VF-8Zj"/>
                             <constraint firstItem="U0Y-XN-CVs" firstAttribute="leading" secondItem="t4g-eP-Emj" secondAttribute="leading" constant="16" id="EKG-57-a0N"/>
                             <constraint firstItem="xQG-CR-SOV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6XF-60-Cjm" secondAttribute="trailing" constant="8" symbolic="YES" id="EkR-Ke-kgM"/>
                             <constraint firstItem="Ckb-XA-CdC" firstAttribute="leading" secondItem="U0Y-XN-CVs" secondAttribute="trailing" constant="45" id="G6x-e5-We0"/>
                             <constraint firstItem="zcw-Gj-O3w" firstAttribute="leading" secondItem="t4g-eP-Emj" secondAttribute="leading" id="Kbl-iG-Zxi"/>
+                            <constraint firstItem="8QC-S7-l1v" firstAttribute="trailing" secondItem="t4g-eP-Emj" secondAttribute="trailing" id="XRT-2y-MKx"/>
                             <constraint firstItem="zcw-Gj-O3w" firstAttribute="top" secondItem="h0m-ir-g6R" secondAttribute="top" constant="36" id="agv-Fr-oyH"/>
                             <constraint firstItem="4ms-fK-Jva" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6XF-60-Cjm" secondAttribute="trailing" constant="8" symbolic="YES" id="iWO-od-FBv"/>
+                            <constraint firstAttribute="bottom" secondItem="8QC-S7-l1v" secondAttribute="bottom" id="j4W-E1-VUE"/>
                             <constraint firstItem="t4g-eP-Emj" firstAttribute="trailing" secondItem="4ms-fK-Jva" secondAttribute="trailing" constant="80" id="keq-Fk-L7R"/>
                             <constraint firstItem="6XF-60-Cjm" firstAttribute="top" secondItem="zcw-Gj-O3w" secondAttribute="bottom" constant="15" id="neT-Vf-muP"/>
                             <constraint firstItem="t4g-eP-Emj" firstAttribute="trailing" secondItem="xQG-CR-SOV" secondAttribute="trailing" constant="70" id="osY-oI-gpn"/>
@@ -606,6 +616,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="icon4" id="CFa-Ms-aJu"/>
                     <navigationItem key="navigationItem" id="yoF-9i-MRq"/>
+                    <connections>
+                        <outlet property="collectionView" destination="8QC-S7-l1v" id="b1i-yp-7X8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nhi-xN-gXv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -764,12 +777,12 @@
                                 <rect key="frame" x="0.0" y="56" width="390" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWM-aA-wT7">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWM-aA-wT7">
                                 <rect key="frame" x="338" y="402" width="47" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="book" catalog="system"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="book" catalog="system"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JgY-pM-vkl"/>
@@ -1041,7 +1054,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="L0T-84-xT4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="SDi-lm-yKS" kind="relationship" relationship="viewControllers" id="7Mn-rZ-yJa"/>
@@ -1275,7 +1288,7 @@ DogTime recommends this carrier for traveling with your small Dachshund. You sho
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Pdk-6A-HCS"/>
-        <segue reference="3hH-BJ-b23"/>
+        <segue reference="5NP-Se-QAG"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
