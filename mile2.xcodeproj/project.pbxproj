@@ -35,7 +35,9 @@
 		9B546AF326F80951000F9280 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B546AF226F80951000F9280 /* Start.storyboard */; };
 		9B641A4126FD3DDE0053A8D4 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B641A4026FD3DDE0053A8D4 /* StorageManager.swift */; };
 		9B641A4526FD6AA00053A8D4 /* HomePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B641A4426FD6AA00053A8D4 /* HomePageTableViewCell.swift */; };
-		9B641A4727010F7D0053A8D4 /* ProfileCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B641A4627010F7D0053A8D4 /* ProfileCollectionViewController.swift */; };
+		9B641A4A270112F70053A8D4 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B641A48270112F70053A8D4 /* ProfileCollectionViewCell.swift */; };
+		9B641A4B270112F70053A8D4 /* ProfileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B641A49270112F70053A8D4 /* ProfileCollectionViewCell.xib */; };
+		9B641A5127015B4D0053A8D4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B641A5027015B4D0053A8D4 /* ProfileViewController.swift */; };
 		9B6E6096262A6D6000342D3E /* PetBreeds 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E6095262A6D6000342D3E /* PetBreeds 1.mlmodel */; };
 		9B6E609F262A915F00342D3E /* ScanPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E609E262A915F00342D3E /* ScanPhotoController.swift */; };
 		9B6E60A4262A96E000342D3E /* RealObjectScanningController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E60A3262A96E000342D3E /* RealObjectScanningController.swift */; };
@@ -96,7 +98,9 @@
 		9B546AF226F80951000F9280 /* Start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
 		9B641A4026FD3DDE0053A8D4 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		9B641A4426FD6AA00053A8D4 /* HomePageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTableViewCell.swift; sourceTree = "<group>"; };
-		9B641A4627010F7D0053A8D4 /* ProfileCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewController.swift; sourceTree = "<group>"; };
+		9B641A48270112F70053A8D4 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		9B641A49270112F70053A8D4 /* ProfileCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCollectionViewCell.xib; sourceTree = "<group>"; };
+		9B641A5027015B4D0053A8D4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9B6E6095262A6D6000342D3E /* PetBreeds 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "PetBreeds 1.mlmodel"; sourceTree = "<group>"; };
 		9B6E609E262A915F00342D3E /* ScanPhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanPhotoController.swift; sourceTree = "<group>"; };
 		9B6E60A3262A96E000342D3E /* RealObjectScanningController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealObjectScanningController.swift; sourceTree = "<group>"; };
@@ -206,7 +210,9 @@
 				9B546AF026F806FF000F9280 /* UserProfileVC.swift */,
 				9B641A4026FD3DDE0053A8D4 /* StorageManager.swift */,
 				9B641A4426FD6AA00053A8D4 /* HomePageTableViewCell.swift */,
-				9B641A4627010F7D0053A8D4 /* ProfileCollectionViewController.swift */,
+				9B641A48270112F70053A8D4 /* ProfileCollectionViewCell.swift */,
+				9B641A49270112F70053A8D4 /* ProfileCollectionViewCell.xib */,
+				9B641A5027015B4D0053A8D4 /* ProfileViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -380,6 +386,7 @@
 				36F065CE261A6A4700719EC0 /* LaunchScreen.storyboard in Resources */,
 				36F065CB261A6A4700719EC0 /* Assets.xcassets in Resources */,
 				9B546AEB26F80520000F9280 /* GoogleService-Info.plist in Resources */,
+				9B641A4B270112F70053A8D4 /* ProfileCollectionViewCell.xib in Resources */,
 				36F0660F261A82B700719EC0 /* Puppy - 1047.mp4 in Resources */,
 				36F065C9261A6A4700719EC0 /* Main.storyboard in Resources */,
 				9B546AF326F80951000F9280 /* Start.storyboard in Resources */,
@@ -518,7 +525,6 @@
 				36F065FF261A730300719EC0 /* SignUpViewController.swift in Sources */,
 				9B6E6096262A6D6000342D3E /* PetBreeds 1.mlmodel in Sources */,
 				36F065C6261A6A4700719EC0 /* ViewController.swift in Sources */,
-				9B641A4727010F7D0053A8D4 /* ProfileCollectionViewController.swift in Sources */,
 				36F06608261A7BBA00719EC0 /* Utilities.swift in Sources */,
 				9B546AE926F80414000F9280 /* Constants.swift in Sources */,
 				36F065C2261A6A4700719EC0 /* AppDelegate.swift in Sources */,
@@ -526,9 +532,11 @@
 				9B2083D4262FF1A6009BD355 /* LikeVC.swift in Sources */,
 				36F065FA261A72DF00719EC0 /* LoginViewController.swift in Sources */,
 				36F065F5261A72D300719EC0 /* HomeViewController.swift in Sources */,
+				9B641A4A270112F70053A8D4 /* ProfileCollectionViewCell.swift in Sources */,
 				36F06619261A877F00719EC0 /* HomeCollectionViewCell.swift in Sources */,
 				9B6E60A4262A96E000342D3E /* RealObjectScanningController.swift in Sources */,
 				9B6E60A9262A97D600342D3E /* Resnet50.mlmodel in Sources */,
+				9B641A5127015B4D0053A8D4 /* ProfileViewController.swift in Sources */,
 				9B546AF126F806FF000F9280 /* UserProfileVC.swift in Sources */,
 				9B6E609F262A915F00342D3E /* ScanPhotoController.swift in Sources */,
 			);
