@@ -12,29 +12,18 @@ class LoginViewController: UIViewController {
 
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
-    
     @IBOutlet var loginBtn: UIButton!
-    
     @IBOutlet var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setUpElements()
-
-        // Do any additional setup after loading the view.
     }
     
     func setUpElements(){
-        
         errorLabel.alpha = 0
-        
         Utilities.styleTextField(usernameTextField)
-        
-        
         Utilities.styleTextField(passwordTextField)
-        
-        
         Utilities.styleFilledButton(loginBtn)
         
     }
@@ -54,22 +43,9 @@ class LoginViewController: UIViewController {
             }
             else {
                 self.performSegue(withIdentifier: "ShowHomeViewController", sender: self)
-                //let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
-                
-                //self.view.window?.rootViewController = homeViewController
-                //self.view.window?.makeKeyAndVisible()
             }
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     @IBAction func loginTapped(_sender: Any){
         
