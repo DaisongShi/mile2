@@ -15,9 +15,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var PageView: UIPageControl!
     
-    var imgArr = [UIImage(named: "dog1"),
-                  UIImage(named: "dog2"),
-                  UIImage(named: "dog3")]
+    var imgArr = [UIImage(named: "dog2"),
+                  UIImage(named: "dog3"),
+                  UIImage(named: "dog4")]
     
     
     @IBOutlet weak var homeTableView: UITableView!
