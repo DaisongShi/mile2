@@ -34,14 +34,16 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         guard let imageData = image.pngData() else {
             return
         }
+        let imagename = NSUUID().uuidString
         
-        
-        storage.child("images/file.png").putData(imageData, metadata: nil, completion: { _, error in
+        storage.child("images/\(imagename).png").putData(imageData, metadata: nil, completion: { _, error in
             guard error == nil else {
                 print("Failed to upload")
                 return
             }
-            self.storage.child("images/file.png").downloadURL(completion: { url, error in
+//            let filename : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+//            let imagename = NSUUID().uuidString
+            self.storage.child("images/\(imagename).png").downloadURL(completion: { url, error in
                 guard let url = url, error == nil else {
                     return
                 }
