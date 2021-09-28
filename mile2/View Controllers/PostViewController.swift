@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseStorage
+import FirebaseFirestore
 
 class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -23,6 +24,26 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         picker.delegate = self
         picker.allowsEditing = true
         present(picker, animated: true)
+        let input: String = textView.text
+        let db = Firestore.firestore()
+        db.collection("userpost").addDocument(data: ["post": input])
+        {(error) in
+            if error != nil {
+                // show error message
+                print("Error saving user post")
+            }
+        }
+        /*
+        db.collection("userpost").document().setData(["post": input])
+        { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
+        }*/
+        self.performSegue(withIdentifier: "goHomePage", sender: self)
+        
     }
     
     
