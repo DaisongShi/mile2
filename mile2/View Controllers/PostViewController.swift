@@ -41,9 +41,9 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             } else {
                 print("Document successfully written!")
             }
-        }*/
+        }
         self.performSegue(withIdentifier: "goHomePage", sender: self)
-        
+         */
     }
     
     
