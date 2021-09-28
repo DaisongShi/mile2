@@ -303,7 +303,7 @@
                                 </items>
                             </navigationBar>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsW-Nq-gT4">
-                                <rect key="frame" x="0.0" y="709" width="390" height="49"/>
+                                <rect key="frame" x="0.0" y="626" width="390" height="132"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <tabBarItem image="icon1" id="HL9-ww-gO4"/>
@@ -1380,7 +1380,7 @@ DogTime recommends this carrier for traveling with your small Dachshund. You sho
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8dA-0w-apq"/>
+        <segue reference="Ds9-rU-ys0"/>
         <segue reference="5NP-Se-QAG"/>
     </inferredMetricsTieBreakers>
     <resources>
