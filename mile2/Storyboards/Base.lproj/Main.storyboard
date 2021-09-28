@@ -604,11 +604,12 @@
                         <outlet property="imageView" destination="nzT-nV-l2G" id="4Ha-p8-Np5"/>
                         <outlet property="label" destination="AGN-CA-G5O" id="om9-Us-Nu3"/>
                         <outlet property="textView" destination="u66-Ie-0PC" id="bCC-Lz-HA1"/>
+                        <segue destination="zuB-cs-Uqz" kind="show" identifier="goHomePage" id="8dA-0w-apq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ze4-iq-JDL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3127.6923076923076" y="-40.521327014218009"/>
+            <point key="canvasLocation" x="2925" y="-58"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="BYe-J2-fYA">
@@ -1379,7 +1380,7 @@ DogTime recommends this carrier for traveling with your small Dachshund. You sho
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FjC-mE-AEp"/>
+        <segue reference="8dA-0w-apq"/>
         <segue reference="5NP-Se-QAG"/>
     </inferredMetricsTieBreakers>
     <resources>
