@@ -170,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AF8-s1-EhF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3.0769230769230766" y="-909.24170616113736"/>
+            <point key="canvasLocation" x="-3" y="-791"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Kn0-ep-0k4">
@@ -593,7 +593,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ze4-iq-JDL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2042" y="-791"/>
+            <point key="canvasLocation" x="2041.5384615384614" y="-791.23222748815158"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="BYe-J2-fYA">
@@ -699,7 +699,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nhi-xN-gXv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3100" y="818"/>
+            <point key="canvasLocation" x="2042" y="800"/>
         </scene>
         <!--LikeVC-->
         <scene sceneID="ymT-hy-4om">
@@ -804,7 +804,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XXg-lz-yx5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2085" y="818"/>
+            <point key="canvasLocation" x="1014" y="800"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="YN2-Gz-9dv">
@@ -819,16 +819,15 @@
                                 <items>
                                     <navigationItem title="Finds" id="AC5-5Y-lcW">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="MHl-u9-e0f">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OoL-1V-vzL">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OoL-1V-vzL">
                                                 <rect key="frame" x="16" y="6" width="48" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="48" id="9IC-3R-6cL"/>
-                                                    <constraint firstAttribute="height" constant="51" id="jYc-lh-1I4"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
-                                                <state key="normal" image="scanner.fill" catalog="system"/>
+                                                <state key="normal" image="photo" catalog="system"/>
                                                 <connections>
                                                     <segue destination="GiN-Vx-R4N" kind="show" id="s99-za-MUS"/>
                                                 </connections>
@@ -910,7 +909,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="typ-Ss-CFy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1014" y="800"/>
+            <point key="canvasLocation" x="-3" y="800"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="X6j-1z-lU4">
@@ -966,7 +965,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kg0-Ob-Bmn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3" y="818"/>
+            <point key="canvasLocation" x="-786" y="800"/>
         </scene>
         <!--User ProfileVC-->
         <scene sceneID="xMd-0n-QH7">
@@ -1170,6 +1169,7 @@
                         <segue destination="BHb-dz-gg6" kind="relationship" relationship="viewControllers" id="raz-2R-EVy"/>
                         <segue destination="5u1-dE-KEm" kind="relationship" relationship="viewControllers" id="o8x-OP-oEz"/>
                         <segue destination="bzE-3H-IbD" kind="relationship" relationship="viewControllers" id="NGc-Jc-W9V"/>
+                        <segue destination="RGe-h5-MId" kind="relationship" relationship="viewControllers" id="f3x-nE-aVc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bj0-MJ-x0n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1394,12 +1394,62 @@ DogTime recommends this carrier for traveling with your small Dachshund. You sho
             </objects>
             <point key="canvasLocation" x="2085" y="1616"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Rkd-4m-hVk">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="RGe-h5-MId" customClass="MapViewController" customModule="mile2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hTh-A0-xaf">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZ0-Dv-0f6">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
+                                <items>
+                                    <navigationItem title="Map" id="SOB-7d-HOY">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="aVp-iO-i5M">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="searchButton:" destination="RGe-h5-MId" id="xrM-un-Bgz"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="A2e-OY-2Yt">
+                                <rect key="frame" x="0.0" y="56" width="390" height="651"/>
+                                <connections>
+                                    <outlet property="delegate" destination="RGe-h5-MId" id="Ef3-qy-76c"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gwf-8c-wUW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tZ0-Dv-0f6" firstAttribute="top" secondItem="gwf-8c-wUW" secondAttribute="top" id="HnQ-rs-xJ3"/>
+                            <constraint firstItem="A2e-OY-2Yt" firstAttribute="bottom" secondItem="gwf-8c-wUW" secondAttribute="bottom" id="Lmc-7q-7ry"/>
+                            <constraint firstItem="tZ0-Dv-0f6" firstAttribute="trailing" secondItem="gwf-8c-wUW" secondAttribute="trailing" id="amo-gb-Cc2"/>
+                            <constraint firstItem="A2e-OY-2Yt" firstAttribute="trailing" secondItem="gwf-8c-wUW" secondAttribute="trailing" id="atf-6F-BYV"/>
+                            <constraint firstItem="A2e-OY-2Yt" firstAttribute="leading" secondItem="gwf-8c-wUW" secondAttribute="leading" id="i6B-2U-4im"/>
+                            <constraint firstItem="A2e-OY-2Yt" firstAttribute="top" secondItem="tZ0-Dv-0f6" secondAttribute="bottom" id="ph9-Kz-aPZ"/>
+                            <constraint firstItem="tZ0-Dv-0f6" firstAttribute="leading" secondItem="gwf-8c-wUW" secondAttribute="leading" id="u6f-dM-a9l"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" id="Cjf-Bc-Ge2">
+                        <imageReference key="image" image="mappin.and.ellipse" catalog="system" symbolScale="default"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="mapView" destination="A2e-OY-2Yt" id="NLd-FN-yOi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5bz-Ma-fXl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3100" y="800"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fal-Iq-BvR"/>
         <segue reference="s99-za-MUS"/>
-        <segue reference="Pdk-6A-HCS"/>
-        <segue reference="5NP-Se-QAG"/>
+        <segue reference="FjC-mE-AEp"/>
+        <segue reference="3hH-BJ-b23"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
@@ -1423,11 +1473,12 @@ DogTime recommends this carrier for traveling with your small Dachshund. You sho
         <image name="img2" width="117" height="107.66666412353516"/>
         <image name="like" width="46.666667938232422" height="14"/>
         <image name="like2" width="32" height="31"/>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="menucard.fill" catalog="system" width="106" height="128"/>
         <image name="message" catalog="system" width="128" height="113"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="proImg" width="400" height="400"/>
-        <image name="scanner.fill" catalog="system" width="128" height="93"/>
         <image name="viewfinder" catalog="system" width="128" height="115"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
