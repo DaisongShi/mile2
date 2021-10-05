@@ -168,6 +168,7 @@
 				9B546AEE26F805FD000F9280 /* Storyboards */,
 				9B546AE726F803EF000F9280 /* Helpers */,
 				36F0660D261A821500719EC0 /* Media */,
+				9B641A74270C05260053A8D4 /* cells */,
 				36F06603261A732300719EC0 /* View Controllers */,
 				36F065CA261A6A4700719EC0 /* Assets.xcassets */,
 				36F065C1261A6A4700719EC0 /* AppDelegate.swift */,
@@ -204,16 +205,11 @@
 				36F065F4261A72D300719EC0 /* HomeViewController.swift */,
 				36F065C5261A6A4700719EC0 /* ViewController.swift */,
 				36F065FE261A730300719EC0 /* SignUpViewController.swift */,
-				36F06618261A877F00719EC0 /* HomeCollectionViewCell.swift */,
 				9B6E609E262A915F00342D3E /* ScanPhotoController.swift */,
 				9B6E60A3262A96E000342D3E /* RealObjectScanningController.swift */,
 				9B2083D3262FF1A6009BD355 /* LikeVC.swift */,
-				9B2083CE262FE969009BD355 /* TableViewCell.swift */,
 				9B546AF026F806FF000F9280 /* UserProfileVC.swift */,
 				9B641A4026FD3DDE0053A8D4 /* StorageManager.swift */,
-				9B641A4426FD6AA00053A8D4 /* HomePageTableViewCell.swift */,
-				9B641A48270112F70053A8D4 /* ProfileCollectionViewCell.swift */,
-				9B641A49270112F70053A8D4 /* ProfileCollectionViewCell.xib */,
 				9B641A5027015B4D0053A8D4 /* ProfileViewController.swift */,
 				9B641A5227016C410053A8D4 /* PostViewController.swift */,
 			);
@@ -276,6 +272,18 @@
 				9B6E60A8262A97D600342D3E /* Resnet50.mlmodel */,
 			);
 			path = "ML Model";
+			sourceTree = "<group>";
+		};
+		9B641A74270C05260053A8D4 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				36F06618261A877F00719EC0 /* HomeCollectionViewCell.swift */,
+				9B641A49270112F70053A8D4 /* ProfileCollectionViewCell.xib */,
+				9B641A48270112F70053A8D4 /* ProfileCollectionViewCell.swift */,
+				9B641A4426FD6AA00053A8D4 /* HomePageTableViewCell.swift */,
+				9B2083CE262FE969009BD355 /* TableViewCell.swift */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
