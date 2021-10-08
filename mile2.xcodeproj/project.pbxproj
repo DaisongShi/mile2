@@ -42,6 +42,7 @@
 		9B641A76270C17A60053A8D4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B641A75270C17A60053A8D4 /* MapViewController.swift */; };
 		9B641A78270C17DC0053A8D4 /* ToDoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B641A77270C17DC0053A8D4 /* ToDoListVC.swift */; };
 		9B641A7A270C18020053A8D4 /* AddingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B641A79270C18020053A8D4 /* AddingVC.swift */; };
+		9B641A7D270FD88B0053A8D4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B641A7C270FD88B0053A8D4 /* User.swift */; };
 		9B6E6096262A6D6000342D3E /* PetBreeds 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E6095262A6D6000342D3E /* PetBreeds 1.mlmodel */; };
 		9B6E609F262A915F00342D3E /* ScanPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E609E262A915F00342D3E /* ScanPhotoController.swift */; };
 		9B6E60A4262A96E000342D3E /* RealObjectScanningController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E60A3262A96E000342D3E /* RealObjectScanningController.swift */; };
@@ -109,6 +110,7 @@
 		9B641A75270C17A60053A8D4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9B641A77270C17DC0053A8D4 /* ToDoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListVC.swift; sourceTree = "<group>"; };
 		9B641A79270C18020053A8D4 /* AddingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingVC.swift; sourceTree = "<group>"; };
+		9B641A7C270FD88B0053A8D4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9B6E6095262A6D6000342D3E /* PetBreeds 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "PetBreeds 1.mlmodel"; sourceTree = "<group>"; };
 		9B6E609E262A915F00342D3E /* ScanPhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanPhotoController.swift; sourceTree = "<group>"; };
 		9B6E60A3262A96E000342D3E /* RealObjectScanningController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealObjectScanningController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		36F065C0261A6A4700719EC0 /* mile2 */ = {
 			isa = PBXGroup;
 			children = (
+				9B641A7B270FD8400053A8D4 /* Model */,
 				9B546AEF26F8062D000F9280 /* ML Model */,
 				9B546AEE26F805FD000F9280 /* Storyboards */,
 				9B546AE726F803EF000F9280 /* Helpers */,
@@ -293,6 +296,14 @@
 				9B2083CE262FE969009BD355 /* TableViewCell.swift */,
 			);
 			path = cells;
+			sourceTree = "<group>";
+		};
+		9B641A7B270FD8400053A8D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9B641A7C270FD88B0053A8D4 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -542,6 +553,7 @@
 				9B641A4126FD3DDE0053A8D4 /* StorageManager.swift in Sources */,
 				9B641A4526FD6AA00053A8D4 /* HomePageTableViewCell.swift in Sources */,
 				9B2083CF262FE969009BD355 /* TableViewCell.swift in Sources */,
+				9B641A7D270FD88B0053A8D4 /* User.swift in Sources */,
 				36F065FF261A730300719EC0 /* SignUpViewController.swift in Sources */,
 				9B6E6096262A6D6000342D3E /* PetBreeds 1.mlmodel in Sources */,
 				36F065C6261A6A4700719EC0 /* ViewController.swift in Sources */,
