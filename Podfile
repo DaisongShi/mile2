@@ -21,5 +21,6 @@ target 'mile2' do
   pod 'Firebase/Core'
   pod 'Firebase/Analytics'
   pod 'Firebase/Storage'
+  pod 'FirebaseFirestoreSwift'
 
 end
