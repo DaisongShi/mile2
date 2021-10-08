@@ -178,7 +178,7 @@
 				9B546AE726F803EF000F9280 /* Helpers */,
 				36F0660D261A821500719EC0 /* Media */,
 				9B641A74270C05260053A8D4 /* cells */,
-				36F06603261A732300719EC0 /* View Controllers */,
+				36F06603261A732300719EC0 /* Controllers */,
 				36F065CA261A6A4700719EC0 /* Assets.xcassets */,
 				36F065C1261A6A4700719EC0 /* AppDelegate.swift */,
 				36F065C3261A6A4700719EC0 /* SceneDelegate.swift */,
@@ -207,7 +207,7 @@
 			path = mile2UITests;
 			sourceTree = "<group>";
 		};
-		36F06603261A732300719EC0 /* View Controllers */ = {
+		36F06603261A732300719EC0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				36F065F9261A72DF00719EC0 /* LoginViewController.swift */,
@@ -225,7 +225,7 @@
 				9B641A77270C17DC0053A8D4 /* ToDoListVC.swift */,
 				9B641A79270C18020053A8D4 /* AddingVC.swift */,
 			);
-			path = "View Controllers";
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		36F0660D261A821500719EC0 /* Media */ = {
