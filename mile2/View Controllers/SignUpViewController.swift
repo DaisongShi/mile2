@@ -67,28 +67,21 @@ class SignUpViewController: UIViewController {
         // validate the fields
         let error = validateFields()
         if error != nil{
-            // there's something wrong with the fields, show error message
             showError(error!)
         }
         else
         {
-            // create cleaned versions of the data
             let username = usernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            // create users
             Auth.auth().createUser(withEmail: email, password: password) {(result, err) in
-                // check errors
                 if  err != nil {
-                    // there was an error creating the user
                     self.showError("check email format or password")
                 } else {
-                    // User was created successfully
                     let db = Firestore.firestore()
                     db.collection("users").addDocument(data: ["username": username, "uid": result!.user.uid, "email": email])
                     {(error) in
                         if error != nil {
-                            // show error message
                             self.showError("Error saving user data")
                         }
                     }
@@ -100,12 +93,7 @@ class SignUpViewController: UIViewController {
                             print("Document successfully written!")
                         }
                     }
-                    // Transition to the home screen
-                    // self.transitionToHome()
                     self.performSegue(withIdentifier: "ShowLogInPage", sender: self)
-                    // add user input to firestore
-                    // self.addUser(email: email, password: password, username: username)
-
                 }
             }
         }
