@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseStorage
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -15,6 +16,9 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet var label: UILabel!
   //  @IBOutlet weak var titleTxt: UITextField!
     @IBOutlet weak var textView: UITextView!
+    
+    @IBOutlet weak var titleView: UITextField!
+    //  @IBOutlet weak var titleView: UITextView!
     
     private let storage = Storage.storage().reference()
     
@@ -24,15 +28,33 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         picker.delegate = self
         picker.allowsEditing = true
         present(picker, animated: true)
-        let input: String = textView.text
+        let textInput: String = textView.text
+//        let titleInput: String = titleView.text
+        let titleInput: String? = titleView.text
         let db = Firestore.firestore()
-        db.collection("userpost").addDocument(data: ["post": input])
+      /*  db.collection("users").addDocument(data: ["post": input])
         {(error) in
             if error != nil {
                 // show error message
                 print("Error saving user post")
             }
         }
+        */
+        let inputPostCollect = db.collection("userpost")
+        let inputPostDocument = inputPostCollect.document()
+        let id = inputPostDocument.documentID
+        
+        let data: [String: Any] = ["id": id,
+                                   "title": titleInput,
+                                   "text": textInput]
+        inputPostDocument.setData(data) {
+            (error) in
+                if error != nil {
+                    // show error message
+                    print("Error saving user post")
+                }
+        }
+        
         /*
         db.collection("userpost").document().setData(["post": input])
         { err in
