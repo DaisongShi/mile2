@@ -536,7 +536,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="upload"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="photos"/>
                                                 <connections>
                                                     <action selector="didTapSend" destination="Jxk-l1-6ic" eventType="touchUpInside" id="EJb-RR-hhL"/>
                                                 </connections>
@@ -567,6 +567,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qwx-70-AEv">
+                                <rect key="frame" x="0.0" y="106" width="390" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LcG-ck-JZx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -588,6 +594,7 @@
                         <outlet property="imageView" destination="nzT-nV-l2G" id="4Ha-p8-Np5"/>
                         <outlet property="label" destination="AGN-CA-G5O" id="om9-Us-Nu3"/>
                         <outlet property="textView" destination="u66-Ie-0PC" id="bCC-Lz-HA1"/>
+                        <outlet property="titleView" destination="Qwx-70-AEv" id="el8-AX-GuR"/>
                         <segue destination="zuB-cs-Uqz" kind="show" identifier="goHomePage" id="8dA-0w-apq"/>
                     </connections>
                 </viewController>
@@ -1448,7 +1455,7 @@ DogTime recommends this carrier for traveling with your small Dachshund. You sho
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="s99-za-MUS"/>
-        <segue reference="tjy-iv-DwK"/>
+        <segue reference="FjC-mE-AEp"/>
         <segue reference="3hH-BJ-b23"/>
     </inferredMetricsTieBreakers>
     <resources>
