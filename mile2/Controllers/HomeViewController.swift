@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestoreSwift
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
@@ -14,6 +15,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var SliderCollectionView: UICollectionView!
     
     @IBOutlet weak var PageView: UIPageControl!
+    
+    private var db = Firestore.firestore()
     
     var imgArr = [UIImage(named: "dog2"),
                   UIImage(named: "dog3"),
