@@ -9,6 +9,7 @@ import UIKit
 import FirebaseStorage
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import FirebaseAuth
 
 class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -21,8 +22,12 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     //  @IBOutlet weak var titleView: UITextView!
     
     private let storage = Storage.storage().reference()
+    private var users = [User]()
     
     @IBAction func didTapSend(){
+ //       guard NSUserName() != nil else {return}
+        let userID = Auth.auth().currentUser!.uid
+        let userName = Auth.auth().currentUser?.displayName
         let picker = UIImagePickerController()
         picker.sourceType = .photoLibrary
         picker.delegate = self
@@ -42,11 +47,16 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         */
         let inputPostCollect = db.collection("userpost")
         let inputPostDocument = inputPostCollect.document()
-        let id = inputPostDocument.documentID
+        let documentID = inputPostDocument.documentID
         
-        let data: [String: Any] = ["id": id,
+        let data: [String: Any] = ["postid": documentID,
                                    "title": titleInput,
-                                   "text": textInput]
+                                   "text": textInput,
+   //                                "username": NSUserName()]
+                                   "userid": userID,
+                                   "username": userName,
+                                   "profileImageUrl": "",
+                                   "postImageUrl": ""]
         inputPostDocument.setData(data) {
             (error) in
                 if error != nil {
@@ -68,7 +78,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
          */
     }
     
-    
+  
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
         guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
@@ -79,29 +89,30 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
         let imagename = NSUUID().uuidString
         
-        storage.child("images/\(imagename).png").putData(imageData, metadata: nil, completion: { _, error in
+        storage.child("postImages/\(imagename).png").putData(imageData, metadata: nil, completion: { _, error in
             guard error == nil else {
                 print("Failed to upload")
                 return
             }
 //            let filename : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 //            let imagename = NSUUID().uuidString
-            self.storage.child("images/\(imagename).png").downloadURL(completion: { url, error in
+            self.storage.child("postImages/\(imagename).png").downloadURL(completion: { url, error in
                 guard let url = url, error == nil else {
                     return
                 }
                 let urlString = url.absoluteString
                 print("Download URL: \(urlString)")
                 UserDefaults.standard.set(urlString, forKey: "url")
+                var data: [String: Any] = ["postImageUrl": ""]
+                data["postImageUrl"] = urlString
             })
         })
         
         // upload image data
         // get download url
         // save download url to userDefaults
-        
     }
-    
+   
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
