@@ -6,11 +6,43 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet var collectionView: UICollectionView!
-
+    @IBOutlet weak var logout: UIButton!
+    
+    @IBOutlet weak var profileImageView: UIImageView!
+    
+    @IBAction func selectProfileImageBtnTapped(_ sender: Any) {
+        var myPicker = UIImagePickerController()
+        myPicker.delegate = self
+        myPicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        self.present(myPicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            profileImageView.image = editedImage
+        } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage]
+                as? UIImage {
+            profileImageView.image = originalImage
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func logoutTapped(_ sender: Any) {
+        do {
+            try Firebase.Auth.auth().signOut()
+        } catch let logoutError {
+            print(logoutError)
+        }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = storyboard.instantiateViewController(withIdentifier: "index")
+        self.present(loginVC, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
