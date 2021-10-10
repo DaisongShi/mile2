@@ -13,15 +13,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
 
     @IBOutlet weak var SliderCollectionView: UICollectionView!
-    
     @IBOutlet weak var PageView: UIPageControl!
-    
-    private var db = Firestore.firestore()
     
     var imgArr = [UIImage(named: "dog2"),
                   UIImage(named: "dog3"),
                   UIImage(named: "dog4")]
-    
     
     @IBOutlet weak var homeTableView: UITableView!
     
@@ -38,6 +34,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                    UIImage(named: "dog4")]
     
     let postTxt = [("title"), ("title"), ("title"), ("title")]
+    
+    private var db = Firestore.firestore()
+    private var users = [User]()
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
