@@ -37,7 +37,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                    UIImage(named: "dog3"),
                    UIImage(named: "dog4")]
     
-    let postTxt = [("description1"), ("description2"), ("description3"), ("description4")]
+    let postTxt = [("title"), ("title"), ("title"), ("title")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
