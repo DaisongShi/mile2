@@ -10,7 +10,9 @@ import FirebaseFirestoreSwift
 
 class User: Identifiable, Codable {
     var username: String?
-    var input: String?
-    var image: URL?
+    var titleInput: String?
+    var textInput: String?
+    var profileImage: URL?
+    var postImage: URL?
     @DocumentID var id: String? = UUID().uuidString
 }
