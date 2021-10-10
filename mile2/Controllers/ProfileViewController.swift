@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseStorage
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -15,6 +16,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var logout: UIButton!
     
     @IBOutlet weak var profileImageView: UIImageView!
+    private let storage = Storage.storage().reference()
     
     @IBAction func selectProfileImageBtnTapped(_ sender: Any) {
         var myPicker = UIImagePickerController()
@@ -31,6 +33,29 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             profileImageView.image = originalImage
         }
         dismiss(animated: true, completion: nil)
+        
+        guard let imageSelected = self.profileImageView.image else {
+            print ("error")
+            return
+        }
+        guard let imageData = imageSelected.pngData() else {
+            return
+        }
+        let imagename = NSUUID().uuidString
+        storage.child("profileImages/\(imagename).png").putData(imageData, metadata: nil, completion: { _, error in
+            guard error == nil else {
+                print("Failed to upload")
+                return
+            }
+            self.storage.child("profileImages/\(imagename).png").downloadURL(completion: { url, error in
+                guard let url = url, error == nil else {
+                    return
+                }
+                let urlString = url.absoluteString
+                print("Download URL: \(urlString)")
+                UserDefaults.standard.set(urlString, forKey: "url")
+            })
+        })
     }
     
     @IBAction func logoutTapped(_ sender: Any) {
