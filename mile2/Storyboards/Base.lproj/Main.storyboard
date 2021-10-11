@@ -591,8 +591,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="llY-sA-h7D"/>
                     <connections>
-                        <outlet property="imageView" destination="nzT-nV-l2G" id="4Ha-p8-Np5"/>
                         <outlet property="label" destination="AGN-CA-G5O" id="om9-Us-Nu3"/>
+                        <outlet property="postImageView" destination="nzT-nV-l2G" id="ld3-WW-RBr"/>
                         <outlet property="textView" destination="u66-Ie-0PC" id="bCC-Lz-HA1"/>
                         <outlet property="titleView" destination="Qwx-70-AEv" id="el8-AX-GuR"/>
                         <segue destination="zuB-cs-Uqz" kind="show" identifier="goHomePage" id="8dA-0w-apq"/>
