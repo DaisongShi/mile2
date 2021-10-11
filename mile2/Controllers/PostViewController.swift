@@ -13,7 +13,8 @@ import FirebaseAuth
 
 class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    @IBOutlet var imageView: UIImageView!
+    @IBOutlet weak var postImageView: UIImageView!
+   // @IBOutlet var imageView: UIImageView!
     @IBOutlet var label: UILabel!
   //  @IBOutlet weak var titleTxt: UITextField!
     @IBOutlet weak var textView: UITextView!
@@ -28,7 +29,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBAction func didTapSend(){
 
-        guard let imageSelected = imageView.image else {
+        guard let imageSelected = postImageView.image else {
             print ("error")
             return
         }
@@ -214,7 +215,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             }
             DispatchQueue.main.async {
                 let image = UIImage(data: data)
-                self.imageView.image = image
+                self.postImageView.image = image
             }
         })
         task.resume()
@@ -228,10 +229,10 @@ extension PostViewController{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
         if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
-            imageView.image = editedImage
+            postImageView.image = editedImage
         }
         else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
-            imageView.image = originalImage
+            postImageView.image = originalImage
         }
         dismiss(animated: true, completion: nil)
    /*
