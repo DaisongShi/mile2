@@ -35,7 +35,6 @@ class LoginViewController: UIViewController {
         
         // Signing in the user
         Auth.auth().signIn(withEmail: username, password: password) { (result, error) in
-            
             if error != nil {
                 // Couldn't sign in
                 self.errorLabel.text = error!.localizedDescription
