@@ -12,11 +12,11 @@ import FirebaseFirestoreSwift
 import FirebaseAuth
 
 class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     @IBOutlet weak var postImageView: UIImageView!
-   // @IBOutlet var imageView: UIImageView!
+    // @IBOutlet var imageView: UIImageView!
     @IBOutlet var label: UILabel!
-  //  @IBOutlet weak var titleTxt: UITextField!
+    //  @IBOutlet weak var titleTxt: UITextField!
     @IBOutlet weak var textView: UITextView!
     
     @IBOutlet weak var titleView: UITextField!
@@ -25,63 +25,63 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     private let storage = Storage.storage().reference()
     private var users = [User]()
     
-
+    
     
     @IBAction func didTapSend(){
-
+        
         guard let imageSelected = postImageView.image else {
             print ("error")
             return
         }
-
+        
         guard let imageData = imageSelected.pngData() else {
             return
         }
-/*
-        let imagename = NSUUID().uuidString
-        storage.child("postImages/\(imagename).png").putData(imageData, metadata: nil, completion: { _, error in
-            guard error == nil else {
-                print("Failed to upload")
-                return
-            }
-            self.storage.child("postImages/\(imagename).png").downloadURL(completion: { url, error in
-                guard let url = url, error == nil else {
-                    return
-                }
-                let urlString = url.absoluteString
-                print("Download URL: \(urlString)")
-                UserDefaults.standard.set(urlString, forKey: "url")
-                let userID = Auth.auth().currentUser!.uid
-                let userName = Auth.auth().currentUser?.displayName
-                let textInput: String = self.textView.text
-        //        let titleInput: String = titleView.text
-                let titleInput: String? = self.titleView.text
-                let db = Firestore.firestore()
-                let inputPostCollect = db.collection("userpost")
-                let inputPostDocument = inputPostCollect.document()
-                let documentID = inputPostDocument.documentID
-
-                
-                var data: [String: Any] = ["postid": documentID,
-                                           "title": titleInput,
-                                           "text": textInput,
-           //                                "username": NSUserName()]
-                                           "userid": userID,
-                                           "username": userName,
-                                           "profileImageUrl": "",
-                                           "postImageUrl": ""]
-                data["postImageUrl"] = urlString
-                inputPostDocument.setData(data) {
-                    (error) in
-                        if error != nil {
-                            // show error message
-                            print("Error saving user post")
-                        }
-                }
-            })
-        })
-*/
-
+        /*
+         let imagename = NSUUID().uuidString
+         storage.child("postImages/\(imagename).png").putData(imageData, metadata: nil, completion: { _, error in
+         guard error == nil else {
+         print("Failed to upload")
+         return
+         }
+         self.storage.child("postImages/\(imagename).png").downloadURL(completion: { url, error in
+         guard let url = url, error == nil else {
+         return
+         }
+         let urlString = url.absoluteString
+         print("Download URL: \(urlString)")
+         UserDefaults.standard.set(urlString, forKey: "url")
+         let userID = Auth.auth().currentUser!.uid
+         let userName = Auth.auth().currentUser?.displayName
+         let textInput: String = self.textView.text
+         //        let titleInput: String = titleView.text
+         let titleInput: String? = self.titleView.text
+         let db = Firestore.firestore()
+         let inputPostCollect = db.collection("userpost")
+         let inputPostDocument = inputPostCollect.document()
+         let documentID = inputPostDocument.documentID
+         
+         
+         var data: [String: Any] = ["postid": documentID,
+         "title": titleInput,
+         "text": textInput,
+         //                                "username": NSUserName()]
+         "userid": userID,
+         "username": userName,
+         "profileImageUrl": "",
+         "postImageUrl": ""]
+         data["postImageUrl"] = urlString
+         inputPostDocument.setData(data) {
+         (error) in
+         if error != nil {
+         // show error message
+         print("Error saving user post")
+         }
+         }
+         })
+         })
+         */
+        
         let imagename = NSUUID().uuidString
         let storageRef = Storage.storage().reference(forURL: "gs://petsimg-e3c6c.appspot.com")
         let postImgRef = storageRef.child("postImages/\(imagename).png")
@@ -95,7 +95,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             postImgRef.downloadURL(completion: {(url, error)in
                 if let metaImageUrl = url?.absoluteString {
                     let userID = Auth.auth().currentUser!.uid
-//                    let user = Auth.auth().currentUser?.reload(completion: nil)
+                    //                    let user = Auth.auth().currentUser?.reload(completion: nil)
                     let userName = Auth.auth().currentUser?.displayName
                     let email = Auth.auth().currentUser?.email
                     let textInput: String = self.textView.text
@@ -113,87 +113,87 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                                                "postImageUrl": metaImageUrl]
                     inputPostDocument.setData(data) {
                         (error) in
-                            if error != nil {
-                                // show error message
-                                print("Error saving user post")
-                            }
+                        if error != nil {
+                            // show error message
+                            print("Error saving user post")
+                        }
                     }
                 }
             })
         })
- 
         
         
- //       guard NSUserName() != nil else {return}
+        
+        //       guard NSUserName() != nil else {return}
         let picker = UIImagePickerController()
         picker.sourceType = UIImagePickerController.SourceType.photoLibrary
         picker.delegate = self
-   //     picker.allowsEditing = true
+        //     picker.allowsEditing = true
         self.present(picker, animated: true, completion: nil)
-/*
-        let userID = Auth.auth().currentUser!.uid
-        let userName = Auth.auth().currentUser?.displayName
-        let textInput: String = textView.text
-//        let titleInput: String = titleView.text
-        let titleInput: String? = titleView.text
-        let db = Firestore.firestore()
-        let inputPostCollect = db.collection("userpost")
-        let inputPostDocument = inputPostCollect.document()
-        let documentID = inputPostDocument.documentID
-
-        
-        var data: [String: Any] = ["postid": documentID,
-                                   "title": titleInput,
-                                   "text": textInput,
-   //                                "username": NSUserName()]
-                                   "userid": userID,
-                                   "username": userName,
-                                   "profileImageUrl": "",
-                                   "postImageUrl": ""]
-//        data["postImageUrl"] = urlString
-        inputPostDocument.setData(data) {
-            (error) in
-                if error != nil {
-                    // show error message
-                    print("Error saving user post")
-                }
-        }
-*/
+        /*
+         let userID = Auth.auth().currentUser!.uid
+         let userName = Auth.auth().currentUser?.displayName
+         let textInput: String = textView.text
+         //        let titleInput: String = titleView.text
+         let titleInput: String? = titleView.text
+         let db = Firestore.firestore()
+         let inputPostCollect = db.collection("userpost")
+         let inputPostDocument = inputPostCollect.document()
+         let documentID = inputPostDocument.documentID
+         
+         
+         var data: [String: Any] = ["postid": documentID,
+         "title": titleInput,
+         "text": textInput,
+         //                                "username": NSUserName()]
+         "userid": userID,
+         "username": userName,
+         "profileImageUrl": "",
+         "postImageUrl": ""]
+         //        data["postImageUrl"] = urlString
+         inputPostDocument.setData(data) {
+         (error) in
+         if error != nil {
+         // show error message
+         print("Error saving user post")
+         }
+         }
+         */
     }
     
-/*
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        picker.dismiss(animated: true, completion: nil)
-        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
-            return
-        }
-        guard let imageData = image.pngData() else {
-            return
-        }
-        let imagename = NSUUID().uuidString
-        
-        storage.child("postImages/\(imagename).png").putData(imageData, metadata: nil, completion: { _, error in
-            guard error == nil else {
-                print("Failed to upload")
-                return
-            }
-//            let filename : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-//            let imagename = NSUUID().uuidString
-            self.storage.child("postImages/\(imagename).png").downloadURL(completion: { url, error in
-                guard let url = url, error == nil else {
-                    return
-                }
-                let urlString = url.absoluteString
-                print("Download URL: \(urlString)")
-                UserDefaults.standard.set(urlString, forKey: "url")
-//                self.data["postImageUrl"] = urlString
-            })
-        })
-        // upload image data
-        // get download url
-        // save download url to userDefaults
-    }
-*/
+    /*
+     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+     picker.dismiss(animated: true, completion: nil)
+     guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+     return
+     }
+     guard let imageData = image.pngData() else {
+     return
+     }
+     let imagename = NSUUID().uuidString
+     
+     storage.child("postImages/\(imagename).png").putData(imageData, metadata: nil, completion: { _, error in
+     guard error == nil else {
+     print("Failed to upload")
+     return
+     }
+     //            let filename : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+     //            let imagename = NSUUID().uuidString
+     self.storage.child("postImages/\(imagename).png").downloadURL(completion: { url, error in
+     guard let url = url, error == nil else {
+     return
+     }
+     let urlString = url.absoluteString
+     print("Download URL: \(urlString)")
+     UserDefaults.standard.set(urlString, forKey: "url")
+     //                self.data["postImageUrl"] = urlString
+     })
+     })
+     // upload image data
+     // get download url
+     // save download url to userDefaults
+     }
+     */
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
@@ -202,12 +202,12 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         super.viewDidLoad()
         label.textAlignment = .center
         label.numberOfLines = 0
- 
+        
         guard let urlString = UserDefaults.standard.value(forKey: "url") as? String,
               let url = URL(string: urlString) else {
                   return
               }
-  
+        
         label.text = urlString
         
         let task = URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
@@ -223,7 +223,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         // Do any additional setup after loading the view.   */
     }
     
-
+    
 }
 
 extension PostViewController{
@@ -236,30 +236,30 @@ extension PostViewController{
             postImageView.image = originalImage
         }
         dismiss(animated: true, completion: nil)
-   /*
-        guard let imageData = image.pngData() else {
-            return
-        }
-        let imagename = NSUUID().uuidString
-        
-        storage.child("postImages/\(imagename).png").putData(imageData, metadata: nil, completion: { _, error in
-            guard error == nil else {
-                print("Failed to upload")
-                return
-            }
-
-            self.storage.child("postImages/\(imagename).png").downloadURL(completion: { url, error in
-                guard let url = url, error == nil else {
-                    return
-                }
-                let urlString = url.absoluteString
-                print("Download URL: \(urlString)")
-                UserDefaults.standard.set(urlString, forKey: "url")
-                var data: [String: Any] = ["postImageUrl": ""]
-                data["postImageUrl"] = urlString
-            })
-        })
-     */
+        /*
+         guard let imageData = image.pngData() else {
+         return
+         }
+         let imagename = NSUUID().uuidString
+         
+         storage.child("postImages/\(imagename).png").putData(imageData, metadata: nil, completion: { _, error in
+         guard error == nil else {
+         print("Failed to upload")
+         return
+         }
+         
+         self.storage.child("postImages/\(imagename).png").downloadURL(completion: { url, error in
+         guard let url = url, error == nil else {
+         return
+         }
+         let urlString = url.absoluteString
+         print("Download URL: \(urlString)")
+         UserDefaults.standard.set(urlString, forKey: "url")
+         var data: [String: Any] = ["postImageUrl": ""]
+         data["postImageUrl"] = urlString
+         })
+         })
+         */
     }
 }
 
