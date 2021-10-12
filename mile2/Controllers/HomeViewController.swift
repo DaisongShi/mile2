@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
@@ -20,7 +21,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                   UIImage(named: "dog4")]
     
     @IBOutlet weak var homeTableView: UITableView!
-    
+/*
     let fileImg = [UIImage(named: "doge"),
                    UIImage(named: "img1"),
                    UIImage(named: "img2"),
@@ -34,30 +35,68 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                    UIImage(named: "dog4")]
     
     let postTxt = [("title"), ("title"), ("title"), ("title")]
-    
+*/
     private var db = Firestore.firestore()
-    private var users = [User]()
-    
-    
+    private var userpost = [User]()
+    private var userpostCollectionRef: CollectionReference!
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         view.bringSubviewToFront(PageView)
-        
         PageView.currentPage = 0
-        
         homeTableView.delegate = self
         homeTableView.dataSource = self
+        userpostCollectionRef = Firestore.firestore().collection("userpost")
+//        fetchData()
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        userpostCollectionRef.getDocuments { (snapshot, error) in
+            if let err = error {
+                debugPrint("Error fetching docs: \(err)")
+            } else {
+                guard let snap = snapshot else { return }
+                for document in snap.documents {
+                    let data = document.data()
+                    
+                    let username = data["username"] as? String ?? "Anonymous"
+                    let text = data["text"] as? String ?? ""
+                    let title = data["title"] as? String ?? ""
+                    let postImageUrl = data["postImageUrl"] as? String
+                    let profileImageUrl = data["profileImageUrl"] as? String
+                    let documentId = document.documentID
+                    
+                    let newUserPostCollection = User(username: username, titleInput: title, profileImage: profileImageUrl, postImage: postImageUrl)
+                    self.userpost.append(newUserPostCollection)
+                }
+                self.homeTableView.reloadData()
+            }
+        }
+    }
+
+/*
+    func fetchData() {
+        db.collection("userpost").addSnapshotListener {(QuerySnapshot, error) in
+            guard let documents = QuerySnapshot?.documents else {
+                print("No documents")
+                return
+            }
+            self.users = documents.compactMap{ (QuerySnapshot) -> User? in
+                return try? QuerySnapshot.data(as: User.self)
+            }
+        }
+    }
+ */
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nameLbl.count
+      //  return nameLbl.count
+        return userpost.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -68,11 +107,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath)
         as! HomePageTableViewCell
-        cell.postImg.image = self.postImg[indexPath.row]
-        cell.postTxt.text = self.postTxt[indexPath.row]
-        cell.nameLbl.text = self.nameLbl[indexPath.row]
-        cell.fileImg.image = self.fileImg[indexPath.row]
-        
+        cell.configureCell(user: userpost[indexPath.row])
         return cell
     }
     
