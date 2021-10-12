@@ -29,7 +29,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             profileImageView.image = editedImage
         } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage]
-                as? UIImage {
+                    as? UIImage {
             profileImageView.image = originalImage
         }
         dismiss(animated: true, completion: nil)
@@ -102,8 +102,8 @@ extension ProfileViewController: UICollectionViewDataSource {
 }
 
 extension ProfileViewController: UICollectionViewDelegateFlowLayout {
-        func collectionView(_ collectionView: UICollectionView, layout collectionviewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return CGSize(width: 120, height: 120)
-        }
+    func collectionView(_ collectionView: UICollectionView, layout collectionviewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 120, height: 120)
     }
+}
 
