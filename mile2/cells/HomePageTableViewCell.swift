@@ -8,7 +8,7 @@
 import UIKit
 
 class HomePageTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var fileImg: UIImageView!
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var likeBtn: UIButton!
@@ -27,19 +27,19 @@ class HomePageTableViewCell: UITableViewCell {
         postTxt.text = user.titleInput
         if let profileImageUrl = user.profileImage {
             let url = URL(string: profileImageUrl)
-      /*      var request: URLRequest? = nil
-            let task = URLSession.shared.dataTask(with: request!, completionHandler: { data, response, error in
-                if error != nil {
-                    print(error)
-                    return
-                }
-                DispatchQueue.main.async(
-                execute: {
-                    self.fileImg.image = UIImage(data: data!)
-                })
-            })
-            task.resume()
-       */
+            /*      var request: URLRequest? = nil
+             let task = URLSession.shared.dataTask(with: request!, completionHandler: { data, response, error in
+             if error != nil {
+             print(error)
+             return
+             }
+             DispatchQueue.main.async(
+             execute: {
+             self.fileImg.image = UIImage(data: data!)
+             })
+             })
+             task.resume()
+             */
             URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, error) in
                 if error != nil{
                     print(error)
@@ -65,11 +65,11 @@ class HomePageTableViewCell: UITableViewCell {
         }
     }
     
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }
