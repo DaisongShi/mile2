@@ -85,6 +85,7 @@ class SignUpViewController: UIViewController {
                             self.showError("Error saving user data")
                         }
                     }
+                    /*
                     db.collection("users").document("info").setData(["email": email, "password": password, "username": username], merge: true)
                     { err in
                         if let err = err {
@@ -92,7 +93,7 @@ class SignUpViewController: UIViewController {
                         } else {
                             print("Document successfully written!")
                         }
-                    }
+                    }*/
                     self.performSegue(withIdentifier: "ShowLogInPage", sender: self)
                 }
             }
