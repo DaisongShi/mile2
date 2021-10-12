@@ -374,7 +374,7 @@
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <integer key="value" value="18"/>
+                                                            <integer key="value" value="20"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
@@ -389,7 +389,7 @@
                                                         <imageReference key="image" image="message" catalog="system" symbolScale="large"/>
                                                     </state>
                                                 </button>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QP5-2i-fw8">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QP5-2i-fw8">
                                                     <rect key="frame" x="0.0" y="44.666666666666657" width="390" height="146"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="QP5-2i-fw8" secondAttribute="height" multiplier="195:73" id="Vt4-Zl-emz"/>
@@ -1488,8 +1488,9 @@ DogTime recommends this carrier for traveling with your small Dachshund. You sho
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="yiQ-19-Qei"/>
         <segue reference="s99-za-MUS"/>
-        <segue reference="Ds9-rU-ys0"/>
+        <segue reference="CEW-62-vv4"/>
         <segue reference="5NP-Se-QAG"/>
     </inferredMetricsTieBreakers>
     <resources>
