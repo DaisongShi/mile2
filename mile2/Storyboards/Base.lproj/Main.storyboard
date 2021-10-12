@@ -372,6 +372,11 @@
                                                         <constraint firstAttribute="height" constant="31" id="VGo-tF-5Fk"/>
                                                         <constraint firstAttribute="width" constant="31" id="viP-xH-VnZ"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <integer key="value" value="18"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WMc-hi-jho">
                                                     <rect key="frame" x="296" y="190.66666666666666" width="38" height="36.333333333333343"/>
@@ -403,7 +408,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugR-ux-UrB">
                                                     <rect key="frame" x="51" y="11" width="193" height="31"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="66" id="XXW-Xg-rcM"/>
+                                                        <constraint firstAttribute="width" constant="193" id="XXW-Xg-rcM"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1483,9 +1488,8 @@ DogTime recommends this carrier for traveling with your small Dachshund. You sho
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1bu-1F-4Cw"/>
         <segue reference="s99-za-MUS"/>
-        <segue reference="FjC-mE-AEp"/>
+        <segue reference="Ds9-rU-ys0"/>
         <segue reference="5NP-Se-QAG"/>
     </inferredMetricsTieBreakers>
     <resources>
