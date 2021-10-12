@@ -8,11 +8,13 @@
 import UIKit
 import FirebaseFirestoreSwift
 
-class User: Identifiable, Codable {
+struct User {
     var username: String?
     var titleInput: String?
     var textInput: String?
-    var profileImage: URL?
-    var postImage: URL?
-    @DocumentID var id: String? = UUID().uuidString
+    var profileImage: String?
+    var postImage: String?
+    @DocumentID var postid: String? = UUID().uuidString
+    var userid: String? = UUID().uuidString
+    
 }
