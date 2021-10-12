@@ -27,6 +27,50 @@ class HomePageTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func configureCell(user: User) {
+        nameLbl.text = user.username
+        postTxt.text = user.titleInput
+        if let profileImageUrl = user.profileImage {
+            let url = URL(string: profileImageUrl)
+      /*      var request: URLRequest? = nil
+            let task = URLSession.shared.dataTask(with: request!, completionHandler: { data, response, error in
+                if error != nil {
+                    print(error)
+                    return
+                }
+                DispatchQueue.main.async(
+                execute: {
+                    self.fileImg.image = UIImage(data: data!)
+                })
+            })
+            task.resume()
+       */
+            URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, error) in
+                if error != nil{
+                    print(error)
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.fileImg.image = UIImage(data: data!)
+                }
+            }).resume()
+        }
+        
+        if let postImageUrl = user.postImage {
+            let url = URL(string: postImageUrl)
+            URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, error) in
+                if error != nil{
+                    print(error)
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.postImg.image = UIImage(data: data!)
+                }
+            }).resume()
+        }
+    }
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
