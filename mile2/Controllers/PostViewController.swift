@@ -95,7 +95,9 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             postImgRef.downloadURL(completion: {(url, error)in
                 if let metaImageUrl = url?.absoluteString {
                     let userID = Auth.auth().currentUser!.uid
+//                    let user = Auth.auth().currentUser?.reload(completion: nil)
                     let userName = Auth.auth().currentUser?.displayName
+                    let email = Auth.auth().currentUser?.email
                     let textInput: String = self.textView.text
                     let titleInput: String? = self.titleView.text
                     let db = Firestore.firestore()
@@ -106,10 +108,9 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                                                "title": titleInput,
                                                "text": textInput,
                                                "userid": userID,
-                                               "username": userName,
-                                               "profileImageUrl": "",
+                                               "username": email,
+                                               "profileImageUrl": metaImageUrl,
                                                "postImageUrl": metaImageUrl]
-//                    data["postImageUrl"] = metaImageUrl
                     inputPostDocument.setData(data) {
                         (error) in
                             if error != nil {
