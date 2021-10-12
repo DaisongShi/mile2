@@ -10,17 +10,11 @@ import UIKit
 class HomePageTableViewCell: UITableViewCell {
 
     @IBOutlet weak var fileImg: UIImageView!
-    
     @IBOutlet weak var nameLbl: UILabel!
-    
     @IBOutlet weak var likeBtn: UIButton!
-    
     @IBOutlet weak var replyBtn: UIButton!
-    
     @IBOutlet weak var followBtn: UIButton!
-    
     @IBOutlet weak var postTxt: UILabel!
-    
     @IBOutlet weak var postImg: UIImageView!
     
     override func awakeFromNib() {
