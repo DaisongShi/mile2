@@ -401,7 +401,7 @@
                                                     <state key="normal" image="fBtn"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugR-ux-UrB">
-                                                    <rect key="frame" x="51" y="11" width="66" height="31"/>
+                                                    <rect key="frame" x="51" y="11" width="193" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="66" id="XXW-Xg-rcM"/>
                                                     </constraints>
@@ -1483,6 +1483,7 @@ DogTime recommends this carrier for traveling with your small Dachshund. You sho
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="1bu-1F-4Cw"/>
         <segue reference="s99-za-MUS"/>
         <segue reference="FjC-mE-AEp"/>
         <segue reference="5NP-Se-QAG"/>
