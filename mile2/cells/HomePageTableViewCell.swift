@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
 
 class HomePageTableViewCell: UITableViewCell {
     
@@ -16,6 +18,8 @@ class HomePageTableViewCell: UITableViewCell {
     @IBOutlet weak var followBtn: UIButton!
     @IBOutlet weak var postTxt: UILabel!
     @IBOutlet weak var postImg: UIImageView!
+    
+    private var userpost = [User]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,6 +35,57 @@ class HomePageTableViewCell: UITableViewCell {
             likeBtn.setImage(UIImage(named: "heart0"), for: .normal)
             likeBtn.tag = 0
         }
+        self.likeBtn.isEnabled = false
+     /*   let ref = Firestore.firestore().collection("like")
+        ref.addDocument(data:["username": nameLbl.text, "title": postTxt.text, "postImage": postImg, "userImage": fileImg])
+      */
+        guard let imageSelected = postImg.image else {
+            print ("error")
+            return
+        }
+        
+        guard let imageData = imageSelected.pngData() else {
+            return
+        }
+        let imagename = NSUUID().uuidString
+        let storageRef = Storage.storage().reference(forURL: "gs://petsimg-e3c6c.appspot.com")
+        let postImgRef = storageRef.child("likeImages/\(imagename).png")
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/png"
+        postImgRef.putData(imageData, metadata: metadata, completion: { (StorageMetadata, error) in
+            if error != nil {
+                print(error?.localizedDescription)
+                return
+            }
+            postImgRef.downloadURL(completion: {(url, error)in
+                if let metaImageUrl = url?.absoluteString {
+                    let userID = Auth.auth().currentUser!.uid
+                    // let user = Auth.auth().currentUser?.reload(completion: nil)
+                    let userName = Auth.auth().currentUser?.displayName
+                    let email = Auth.auth().currentUser?.email
+               //     let textInput: String = self.textView.text
+                    let titleInput: String? = self.postTxt.text
+                    let db = Firestore.firestore()
+                    let inputPostCollect = db.collection("like")
+                    let inputPostDocument = inputPostCollect.document()
+                    let documentID = inputPostDocument.documentID
+                    var data: [String: Any] = ["postid": documentID,
+                                               "title": titleInput,
+                          //                     "text": textInput,
+                                               "userid": userID,
+                                               "username": email,
+                                               "profileImageUrl": metaImageUrl,
+                                               "postImageUrl": metaImageUrl]
+                    inputPostDocument.setData(data) {
+                        (error) in
+                        if error != nil {
+                            // show error message
+                            print("Error saving user likes")
+                        }
+                    }
+                }
+            })
+        })
     }
     
     
