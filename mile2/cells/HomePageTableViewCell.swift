@@ -22,6 +22,18 @@ class HomePageTableViewCell: UITableViewCell {
         // Initialization code
     }
     
+    @IBAction func likeBtnTapped(_ sender: UIButton) {
+        if likeBtn.tag == 0 {
+            likeBtn.setImage(UIImage(named: "like2"), for: .normal)
+            likeBtn.tag = 1
+        }
+        else {
+            likeBtn.setImage(UIImage(named: "heart0"), for: .normal)
+            likeBtn.tag = 0
+        }
+    }
+    
+    
     func configureCell(user: User) {
         nameLbl.text = user.username
         postTxt.text = user.titleInput
