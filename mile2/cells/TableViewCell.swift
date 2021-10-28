@@ -20,7 +20,35 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var likeBtn: UIButton!
     
     
-    
+    func configureCell(user: User) {
+        nameLabel.text = user.username
+        titleLabel.text = user.titleInput
+        if let profileImageUrl = user.profileImage {
+            let url = URL(string: profileImageUrl)
+            URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, error) in
+                if error != nil{
+                    print(error)
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.userImg.image = UIImage(data: data!)
+                }
+            }).resume()
+        }
+        
+        if let postImageUrl = user.postImage {
+            let url = URL(string: postImageUrl)
+            URLSession.shared.dataTask(with: url!, completionHandler: {(data, response, error) in
+                if error != nil{
+                    print(error)
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.imageCell.image = UIImage(data: data!)
+                }
+            }).resume()
+        }
+    }
 
     
     
