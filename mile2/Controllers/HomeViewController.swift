@@ -49,7 +49,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         homeTableView.delegate = self
         homeTableView.dataSource = self
         userpostCollectionRef = Firestore.firestore().collection("userpost")
-        //        fetchData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
