@@ -43,6 +43,8 @@
 		9B641A78270C17DC0053A8D4 /* ToDoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B641A77270C17DC0053A8D4 /* ToDoListVC.swift */; };
 		9B641A7A270C18020053A8D4 /* AddingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B641A79270C18020053A8D4 /* AddingVC.swift */; };
 		9B641A7D270FD88B0053A8D4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B641A7C270FD88B0053A8D4 /* User.swift */; };
+		9B641AFD271E8DF30053A8D4 /* FindPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B641AFC271E8DF30053A8D4 /* FindPageController.swift */; };
+		9B641AFF271E8E260053A8D4 /* FindCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B641AFE271E8E260053A8D4 /* FindCell.swift */; };
 		9B6E6096262A6D6000342D3E /* PetBreeds 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E6095262A6D6000342D3E /* PetBreeds 1.mlmodel */; };
 		9B6E609F262A915F00342D3E /* ScanPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E609E262A915F00342D3E /* ScanPhotoController.swift */; };
 		9B6E60A4262A96E000342D3E /* RealObjectScanningController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E60A3262A96E000342D3E /* RealObjectScanningController.swift */; };
@@ -111,6 +113,8 @@
 		9B641A77270C17DC0053A8D4 /* ToDoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListVC.swift; sourceTree = "<group>"; };
 		9B641A79270C18020053A8D4 /* AddingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingVC.swift; sourceTree = "<group>"; };
 		9B641A7C270FD88B0053A8D4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9B641AFC271E8DF30053A8D4 /* FindPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPageController.swift; sourceTree = "<group>"; };
+		9B641AFE271E8E260053A8D4 /* FindCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCell.swift; sourceTree = "<group>"; };
 		9B6E6095262A6D6000342D3E /* PetBreeds 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "PetBreeds 1.mlmodel"; sourceTree = "<group>"; };
 		9B6E609E262A915F00342D3E /* ScanPhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanPhotoController.swift; sourceTree = "<group>"; };
 		9B6E60A3262A96E000342D3E /* RealObjectScanningController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealObjectScanningController.swift; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 				9B641A75270C17A60053A8D4 /* MapViewController.swift */,
 				9B641A77270C17DC0053A8D4 /* ToDoListVC.swift */,
 				9B641A79270C18020053A8D4 /* AddingVC.swift */,
+				9B641AFC271E8DF30053A8D4 /* FindPageController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 				9B641A48270112F70053A8D4 /* ProfileCollectionViewCell.swift */,
 				9B641A4426FD6AA00053A8D4 /* HomePageTableViewCell.swift */,
 				9B2083CE262FE969009BD355 /* TableViewCell.swift */,
+				9B641AFE271E8E260053A8D4 /* FindCell.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -565,11 +571,13 @@
 				9B641A76270C17A60053A8D4 /* MapViewController.swift in Sources */,
 				9B2083D4262FF1A6009BD355 /* LikeVC.swift in Sources */,
 				36F065FA261A72DF00719EC0 /* LoginViewController.swift in Sources */,
+				9B641AFD271E8DF30053A8D4 /* FindPageController.swift in Sources */,
 				36F065F5261A72D300719EC0 /* HomeViewController.swift in Sources */,
 				9B641A4A270112F70053A8D4 /* ProfileCollectionViewCell.swift in Sources */,
 				36F06619261A877F00719EC0 /* HomeCollectionViewCell.swift in Sources */,
 				9B641A7A270C18020053A8D4 /* AddingVC.swift in Sources */,
 				9B6E60A4262A96E000342D3E /* RealObjectScanningController.swift in Sources */,
+				9B641AFF271E8E260053A8D4 /* FindCell.swift in Sources */,
 				9B6E60A9262A97D600342D3E /* Resnet50.mlmodel in Sources */,
 				9B641A5127015B4D0053A8D4 /* ProfileViewController.swift in Sources */,
 				9B546AF126F806FF000F9280 /* UserProfileVC.swift in Sources */,
