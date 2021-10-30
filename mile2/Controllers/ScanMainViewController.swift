@@ -34,8 +34,6 @@ class ScanMainViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.bringSubviewToFront(PageView)
-        PageView.currentPage = 0
         breedInfoCollectionRef = Firestore.firestore().collection("dogBreedsInfo")
     }
 }
@@ -121,12 +119,12 @@ extension ScanMainViewController {
         let topPredictions: [String] = predictions.prefix(predictionsToShow).map { prediction in
             //the breed of dog
             var name = prediction.classification
+            //change breed_string(name) to breed_name(returnName)
+            var returnName = ""
 
             if let firstComma = name.firstIndex(of: ",") {
                 name = String(name.prefix(upTo: firstComma))
                 
-                //change breed_string(name) to breed_name(returnName)
-                let returnName = ""
                 //get data from firebase
                 breedInfoCollectionRef.getDocuments { (snapshot, error) in
                     if let err = error {
@@ -139,7 +137,7 @@ extension ScanMainViewController {
                             let breedString = data["breed_string"] as? String ?? ""
                             let documentId = document.documentID
                             
-                            let newUserPostCollection = Breed(breedName: breedName, breedString: breedString)
+                            let newUserPostCollection = Breed(breedName: breedName, BreedString: breedString)
                             self.breedInfo.append(newUserPostCollection)
                             
                             if name == breedString {
