@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 
 class ScanMainViewController: UIViewController {
@@ -25,6 +27,17 @@ class ScanMainViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var predictionLabel: UILabel!
 
+    //load Firebase
+    private var db = Firestore.firestore()
+    private var breedInfo = [Breed]()
+    private var breedInfoCollectionRef: CollectionReference!
+        
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.bringSubviewToFront(PageView)
+        PageView.currentPage = 0
+        breedInfoCollectionRef = Firestore.firestore().collection("dogBreedsInfo")
+    }
 }
 
 extension ScanMainViewController {
@@ -111,11 +124,33 @@ extension ScanMainViewController {
 
             if let firstComma = name.firstIndex(of: ",") {
                 name = String(name.prefix(upTo: firstComma))
+                
+                //change breed_string(name) to breed_name(returnName)
+                let returnName = ""
+                //get data from firebase
+                breedInfoCollectionRef.getDocuments { (snapshot, error) in
+                    if let err = error {
+                        debugPrint("Error fetching docs: \(err)")
+                    } else {
+                        guard let snap = snapshot else { return }
+                        for document in snap.documents {
+                            let data = document.data()
+                            let breedName = data["breed_name"] as? String ?? ""
+                            let breedString = data["breed_string"] as? String ?? ""
+                            let documentId = document.documentID
+                            
+                            let newUserPostCollection = Breed(breedName: breedName, breedString: breedString)
+                            self.breedInfo.append(newUserPostCollection)
+                            
+                            if name == breedString {
+                                returnName = breedName
+                            }
+                        }
+                    }
+                }
             }
-            
-            
 
-            return "\(name) - \(prediction.confidencePercentage)%"
+            return "\(returnName) - \(prediction.confidencePercentage)%"
         }
 
         return topPredictions

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0041A46E3A9C63B1DD416BCF /* Pods_mile2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CB296B875229C7DF1607E30 /* Pods_mile2.framework */; };
+		1C4C1184272CEF47008C978B /* dog_breeds_2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1C4C1183272CEF47008C978B /* dog_breeds_2.mlmodel */; };
+		1C4C1186272CEFB1008C978B /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4C1185272CEFB1008C978B /* Breed.swift */; };
+		1C4C1188272CF030008C978B /* ScanCameraPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4C1187272CF030008C978B /* ScanCameraPickerViewController.swift */; };
+		1C4C118A272CF039008C978B /* ScanMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4C1189272CF039008C978B /* ScanMainViewController.swift */; };
+		1C4C118C272CF042008C978B /* ScanPhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4C118B272CF042008C978B /* ScanPhotoPickerViewController.swift */; };
 		36F065C2261A6A4700719EC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F065C1261A6A4700719EC0 /* AppDelegate.swift */; };
 		36F065C4261A6A4700719EC0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F065C3261A6A4700719EC0 /* SceneDelegate.swift */; };
 		36F065C6261A6A4700719EC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F065C5261A6A4700719EC0 /* ViewController.swift */; };
@@ -46,8 +51,6 @@
 		9B641AFD271E8DF30053A8D4 /* FindPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B641AFC271E8DF30053A8D4 /* FindPageController.swift */; };
 		9B641AFF271E8E260053A8D4 /* FindCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B641AFE271E8E260053A8D4 /* FindCell.swift */; };
 		9B6E6096262A6D6000342D3E /* PetBreeds 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E6095262A6D6000342D3E /* PetBreeds 1.mlmodel */; };
-		9B6E609F262A915F00342D3E /* ScanPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E609E262A915F00342D3E /* ScanPhotoController.swift */; };
-		9B6E60A4262A96E000342D3E /* RealObjectScanningController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E60A3262A96E000342D3E /* RealObjectScanningController.swift */; };
 		9B6E60A9262A97D600342D3E /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9B6E60A8262A97D600342D3E /* Resnet50.mlmodel */; };
 		CBCFA46167CE7869A687DF50 /* Pods_mile2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF0AE48018CC9B3FC8667935 /* Pods_mile2Tests.framework */; };
 /* End PBXBuildFile section */
@@ -75,6 +78,11 @@
 		0887596D5A93E95B1589CD8B /* Pods-mile2-mile2UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mile2-mile2UITests.debug.xcconfig"; path = "Target Support Files/Pods-mile2-mile2UITests/Pods-mile2-mile2UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0CC5278D82FCF7DBAECB18EE /* Pods-mile2-mile2UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mile2-mile2UITests.release.xcconfig"; path = "Target Support Files/Pods-mile2-mile2UITests/Pods-mile2-mile2UITests.release.xcconfig"; sourceTree = "<group>"; };
 		16DD1D603CC6FCAE2515BF07 /* Pods-mile2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mile2Tests.debug.xcconfig"; path = "Target Support Files/Pods-mile2Tests/Pods-mile2Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		1C4C1183272CEF47008C978B /* dog_breeds_2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = dog_breeds_2.mlmodel; sourceTree = "<group>"; };
+		1C4C1185272CEFB1008C978B /* Breed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
+		1C4C1187272CF030008C978B /* ScanCameraPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanCameraPickerViewController.swift; sourceTree = "<group>"; };
+		1C4C1189272CF039008C978B /* ScanMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanMainViewController.swift; sourceTree = "<group>"; };
+		1C4C118B272CF042008C978B /* ScanPhotoPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanPhotoPickerViewController.swift; sourceTree = "<group>"; };
 		1CB296B875229C7DF1607E30 /* Pods_mile2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mile2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F065BE261A6A4700719EC0 /* mile2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mile2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F065C1261A6A4700719EC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,8 +124,6 @@
 		9B641AFC271E8DF30053A8D4 /* FindPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPageController.swift; sourceTree = "<group>"; };
 		9B641AFE271E8E260053A8D4 /* FindCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCell.swift; sourceTree = "<group>"; };
 		9B6E6095262A6D6000342D3E /* PetBreeds 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "PetBreeds 1.mlmodel"; sourceTree = "<group>"; };
-		9B6E609E262A915F00342D3E /* ScanPhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanPhotoController.swift; sourceTree = "<group>"; };
-		9B6E60A3262A96E000342D3E /* RealObjectScanningController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealObjectScanningController.swift; sourceTree = "<group>"; };
 		9B6E60A8262A97D600342D3E /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		AEADBAEB652AA282F29FC170 /* Pods-mile2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mile2.release.xcconfig"; path = "Target Support Files/Pods-mile2/Pods-mile2.release.xcconfig"; sourceTree = "<group>"; };
 		AF0AE48018CC9B3FC8667935 /* Pods_mile2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mile2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,12 +220,13 @@
 		36F06603261A732300719EC0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1C4C118B272CF042008C978B /* ScanPhotoPickerViewController.swift */,
+				1C4C1189272CF039008C978B /* ScanMainViewController.swift */,
+				1C4C1187272CF030008C978B /* ScanCameraPickerViewController.swift */,
 				36F065F9261A72DF00719EC0 /* LoginViewController.swift */,
 				36F065F4261A72D300719EC0 /* HomeViewController.swift */,
 				36F065C5261A6A4700719EC0 /* ViewController.swift */,
 				36F065FE261A730300719EC0 /* SignUpViewController.swift */,
-				9B6E609E262A915F00342D3E /* ScanPhotoController.swift */,
-				9B6E60A3262A96E000342D3E /* RealObjectScanningController.swift */,
 				9B2083D3262FF1A6009BD355 /* LikeVC.swift */,
 				9B546AF026F806FF000F9280 /* UserProfileVC.swift */,
 				9B641A4026FD3DDE0053A8D4 /* StorageManager.swift */,
@@ -285,6 +292,7 @@
 		9B546AEF26F8062D000F9280 /* ML Model */ = {
 			isa = PBXGroup;
 			children = (
+				1C4C1183272CEF47008C978B /* dog_breeds_2.mlmodel */,
 				9B6E6095262A6D6000342D3E /* PetBreeds 1.mlmodel */,
 				9B6E60A8262A97D600342D3E /* Resnet50.mlmodel */,
 			);
@@ -308,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				9B641A7C270FD88B0053A8D4 /* User.swift */,
+				1C4C1185272CEFB1008C978B /* Breed.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -570,18 +579,21 @@
 				36F065C4261A6A4700719EC0 /* SceneDelegate.swift in Sources */,
 				9B641A76270C17A60053A8D4 /* MapViewController.swift in Sources */,
 				9B2083D4262FF1A6009BD355 /* LikeVC.swift in Sources */,
+				1C4C118A272CF039008C978B /* ScanMainViewController.swift in Sources */,
+				1C4C1188272CF030008C978B /* ScanCameraPickerViewController.swift in Sources */,
 				36F065FA261A72DF00719EC0 /* LoginViewController.swift in Sources */,
 				9B641AFD271E8DF30053A8D4 /* FindPageController.swift in Sources */,
 				36F065F5261A72D300719EC0 /* HomeViewController.swift in Sources */,
 				9B641A4A270112F70053A8D4 /* ProfileCollectionViewCell.swift in Sources */,
 				36F06619261A877F00719EC0 /* HomeCollectionViewCell.swift in Sources */,
+				1C4C1186272CEFB1008C978B /* Breed.swift in Sources */,
 				9B641A7A270C18020053A8D4 /* AddingVC.swift in Sources */,
-				9B6E60A4262A96E000342D3E /* RealObjectScanningController.swift in Sources */,
 				9B641AFF271E8E260053A8D4 /* FindCell.swift in Sources */,
 				9B6E60A9262A97D600342D3E /* Resnet50.mlmodel in Sources */,
+				1C4C118C272CF042008C978B /* ScanPhotoPickerViewController.swift in Sources */,
+				1C4C1184272CEF47008C978B /* dog_breeds_2.mlmodel in Sources */,
 				9B641A5127015B4D0053A8D4 /* ProfileViewController.swift in Sources */,
 				9B546AF126F806FF000F9280 /* UserProfileVC.swift in Sources */,
-				9B6E609F262A915F00342D3E /* ScanPhotoController.swift in Sources */,
 				9B641A78270C17DC0053A8D4 /* ToDoListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
