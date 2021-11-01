@@ -853,7 +853,7 @@
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="BHb-dz-gg6" customClass="FindPageController" customModule="mile2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lLZ-Nx-ONQ">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UO7-Oy-VaT">
@@ -1488,6 +1488,10 @@ DogTime recommends this carrier for traveling with your small Dachshund. You sho
                                 <rect key="frame" x="284" y="693.33333333333337" width="60" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Detail"/>
+                                <connections>
+                                    <action selector="breedDetailButton:" destination="rbu-3h-yoG" eventType="touchUpInside" id="qhF-0b-v8i"/>
+                                    <segue destination="p7M-X8-G0q" kind="presentation" id="Dzr-hx-9fc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3U-J4-eHO">
                                 <rect key="frame" x="292" y="753.33333333333337" width="52" height="41"/>
@@ -1535,8 +1539,44 @@ DogTime recommends this carrier for traveling with your small Dachshund. You sho
             </objects>
             <point key="canvasLocation" x="1014" y="1616"/>
         </scene>
+        <!--Breed Detail View Controller-->
+        <scene sceneID="P9l-Yr-dlI">
+            <objects>
+                <viewController id="p7M-X8-G0q" customClass="BreedDetailViewController" customModule="mile2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Ly-D7-o23">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Breed Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZZ-8d-AqE">
+                                <rect key="frame" x="16" y="98" width="358" height="658"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Breed Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trR-fg-Wzk">
+                                <rect key="frame" x="80" y="20" width="231" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ze0-N5-iBz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="breedDescriptionLabel" destination="VZZ-8d-AqE" id="v1K-6d-ntz"/>
+                        <outlet property="breedNameLabel" destination="trR-fg-Wzk" id="iYF-MI-H5q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Vl-6Z-6fb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1984.6153846153845" y="1615.8767772511846"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="MC0-jh-iza"/>
         <segue reference="g3p-Da-Gwp"/>
         <segue reference="yWg-IB-hrD"/>
         <segue reference="5NP-Se-QAG"/>

@@ -16,6 +16,7 @@
 		1C4C1194272DADD8008C978B /* ImagePredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4C1193272DADD8008C978B /* ImagePredictor.swift */; };
 		1C4C1198272DADED008C978B /* VNClassificationObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4C1196272DADED008C978B /* VNClassificationObservation.swift */; };
 		1C4C1199272DADED008C978B /* CGImagePropertyOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4C1197272DADED008C978B /* CGImagePropertyOrientation.swift */; };
+		1C4C119B272EDE8E008C978B /* BreedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4C119A272EDE8E008C978B /* BreedDetailViewController.swift */; };
 		36F065C2261A6A4700719EC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F065C1261A6A4700719EC0 /* AppDelegate.swift */; };
 		36F065C4261A6A4700719EC0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F065C3261A6A4700719EC0 /* SceneDelegate.swift */; };
 		36F065C6261A6A4700719EC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F065C5261A6A4700719EC0 /* ViewController.swift */; };
@@ -82,6 +83,7 @@
 		1C4C1193272DADD8008C978B /* ImagePredictor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePredictor.swift; sourceTree = "<group>"; };
 		1C4C1196272DADED008C978B /* VNClassificationObservation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNClassificationObservation.swift; sourceTree = "<group>"; };
 		1C4C1197272DADED008C978B /* CGImagePropertyOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGImagePropertyOrientation.swift; sourceTree = "<group>"; };
+		1C4C119A272EDE8E008C978B /* BreedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailViewController.swift; sourceTree = "<group>"; };
 		1CB296B875229C7DF1607E30 /* Pods_mile2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mile2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F065BE261A6A4700719EC0 /* mile2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mile2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36F065C1261A6A4700719EC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				9B641A75270C17A60053A8D4 /* MapViewController.swift */,
 				9B641A77270C17DC0053A8D4 /* ToDoListVC.swift */,
 				9B641A79270C18020053A8D4 /* AddingVC.swift */,
+				1C4C119A272EDE8E008C978B /* BreedDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				9B546AE926F80414000F9280 /* Constants.swift in Sources */,
 				1C4C1198272DADED008C978B /* VNClassificationObservation.swift in Sources */,
 				36F065C2261A6A4700719EC0 /* AppDelegate.swift in Sources */,
+				1C4C119B272EDE8E008C978B /* BreedDetailViewController.swift in Sources */,
 				9B641A5327016C410053A8D4 /* PostViewController.swift in Sources */,
 				36F065C4261A6A4700719EC0 /* SceneDelegate.swift in Sources */,
 				9B641A76270C17A60053A8D4 /* MapViewController.swift in Sources */,

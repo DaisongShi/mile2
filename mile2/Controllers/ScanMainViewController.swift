@@ -7,10 +7,6 @@
 // This is the main function of scanning part
 
 import UIKit
-import Firebase
-import FirebaseFirestore
-import FirebaseFirestoreSwift
-
 
 class ScanMainViewController: UIViewController {
     
@@ -20,21 +16,22 @@ class ScanMainViewController: UIViewController {
     let imagePredictor = ImagePredictor()
 
     //show 2 highest breeds results
-    let predictionsToShow = 2
+    let predictionsToShow = 1
 
     //UI initialization
     @IBOutlet weak var startupPrompts: UIStackView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var predictionLabel: UILabel!
-
-    //load Firebase
-    private var db = Firestore.firestore()
-    private var breedInfo = [Breed]()
-    private var breedInfoCollectionRef: CollectionReference!
-        
+    
+    //click button to breed detail page
+    var dataFrom:String = ""
+    var segueFrom:String = ""
+    @IBAction func breedDetailButton(_ sender: Any) {
+        performSegue(withIdentifier: "breedDetail", sender: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        breedInfoCollectionRef = Firestore.firestore().collection("dogBreedsInfo")
     }
 }
 
@@ -119,36 +116,12 @@ extension ScanMainViewController {
         let topPredictions: [String] = predictions.prefix(predictionsToShow).map { prediction in
             //the breed of dog
             var name = prediction.classification
-            //change breed_string(name) to breed_name(returnName)
-            var returnName = ""
 
             if let firstComma = name.firstIndex(of: ",") {
                 name = String(name.prefix(upTo: firstComma))
-                
-                //get data from firebase
-                breedInfoCollectionRef.getDocuments { (snapshot, error) in
-                    if let err = error {
-                        debugPrint("Error fetching docs: \(err)")
-                    } else {
-                        guard let snap = snapshot else { return }
-                        for document in snap.documents {
-                            let data = document.data()
-                            let breedName = data["breed_name"] as? String ?? ""
-                            let breedString = data["breed_string"] as? String ?? ""
-                            let documentId = document.documentID
-                            
-                            let newUserPostCollection = Breed(breedName: breedName, BreedString: breedString)
-                            self.breedInfo.append(newUserPostCollection)
-                            
-                            if name == breedString {
-                                returnName = breedName
-                            }
-                        }
-                    }
-                }
             }
 
-            return "\(returnName) - \(prediction.confidencePercentage)%"
+            return "\(name) - \(prediction.confidencePercentage)%"
         }
 
         return topPredictions
