@@ -9,19 +9,19 @@ It takes responsibility to raise pets in real life. Cyber Petting is a new way t
 - User can follow other poster
 
 ### Wireframes (screen layouts)
-!['booked-slots-available'](https://github.com/JunqiDu/scheduler/blob/master/docs/scheduler-dayView.png)
+!['booked-slots-available'](https://github.com/DaisongShi/mile2/blob/main/docs/Wireframes.png)
 _Wireframes (screen layouts)_
 
 ### ER Diagram
-!['book-new-apt'](https://github.com/JunqiDu/scheduler/blob/master/docs/new-appointment.png)
+!['book-new-apt'](https://github.com/DaisongShi/mile2/blob/main/docs/ERD.png)
 _ER Diagram_
 
 ### User Case
-!['booked-slots-available'](https://github.com/JunqiDu/scheduler/blob/master/docs/scheduler-dayView.png)
+!['booked-slots-available'](https://github.com/DaisongShi/mile2/blob/main/docs/User%20Case.png)
 _User Case_
 
 ### Proposed System Architecture
-!['book-new-apt'](https://github.com/JunqiDu/scheduler/blob/master/docs/new-appointment.png)
+!['book-new-apt'](https://github.com/DaisongShi/mile2/blob/main/docs/Proposed%20System%20Architecture.png)
 _Proposed System Architecture_
 
 ## Project Stack
